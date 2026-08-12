@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MRDVS｜西班牙竞品、渠道、目标账户与 KP</title>
+  <style>
+    :root{--navy:#071d38;--blue:#1769c2;--ink:#17233a;--muted:#64748b;--line:#dce5f0;--pale:#f5f8fc;--green:#087e5b;--amber:#9a6200;--white:#fff;--slate:#51647d}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--pale);color:var(--ink);font:14px/1.55 Inter,"Microsoft YaHei",Arial,sans-serif} a{color:#1769c2;text-decoration:none} a:hover{text-decoration:underline}
+    .top{background:var(--navy);color:#fff;position:sticky;top:0;z-index:10;box-shadow:0 2px 12px #07172d44}.top-inner,.wrap{width:min(1480px,calc(100% - 44px));margin:auto}.top-inner{height:68px;display:flex;align-items:center;gap:22px}.brand{font-size:17px;font-weight:800}.brand small{display:block;color:#9eddf3;font-size:10px;font-weight:600;letter-spacing:.7px}.top nav{margin-left:auto;display:flex;gap:18px;flex-wrap:wrap}.top a{color:#dceeff;font-size:13px;font-weight:650}
+    .breadcrumb{padding:16px 0 0;color:var(--muted);font-size:12px}.breadcrumb a{color:#486985}.hero{padding:24px 0 18px;border-bottom:1px solid var(--line)}.eyebrow{font-size:12px;color:var(--blue);font-weight:800;letter-spacing:1px;text-transform:uppercase}.hero h1{font-size:30px;line-height:1.25;margin:6px 0 8px;letter-spacing:0}.hero p{max-width:1020px;color:#52627a;margin:0}.method{margin-top:14px;border-left:4px solid #65cde7;background:#e9f8fc;padding:11px 14px;color:#23445b;font-size:12px}
+    .kpis{padding:17px 0;display:grid;grid-template-columns:repeat(4,1fr);gap:11px}.kpi{background:#fff;border:1px solid var(--line);border-radius:7px;padding:13px 14px}.kpi b{display:block;color:var(--navy);font-size:23px}.kpi span{color:var(--muted);font-size:12px}
+    .section{padding:20px 0}.section-head{display:flex;justify-content:space-between;gap:16px;align-items:end;margin-bottom:11px}.section-head h2{font-size:20px;margin:0}.section-head p{margin:2px 0 0;color:var(--muted);font-size:13px;max-width:1000px}.region-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.region{background:#fff;border:1px solid var(--line);border-top:3px solid var(--blue);border-radius:7px;padding:12px}.region h3{margin:0;font-size:15px}.region p{margin:6px 0 0;color:var(--muted);font-size:12px}.region b{display:block;color:#245582;font-size:11px;margin-top:7px}
+    .filters{display:grid;grid-template-columns:1.25fr 1fr 1fr auto;gap:10px;padding:13px;border:1px solid var(--line);background:#fff;border-radius:7px;align-items:end}.field label{display:block;color:#51647d;font-size:12px;font-weight:700;margin-bottom:4px}.field select{display:block;width:100%;border:1px solid #b9c9de;background:#fff;border-radius:5px;padding:7px 8px;color:var(--ink);font:inherit}.reset{border:1px solid #b9c9de;background:#fff;border-radius:5px;height:35px;padding:0 12px;color:#385a80;font:700 12px inherit;cursor:pointer}.summary{display:flex;gap:8px;align-items:center;flex-wrap:wrap;color:var(--muted);font-size:12px;margin:11px 0}
+    .badge{display:inline-block;border-radius:20px;padding:2px 8px;font-size:11px;font-weight:750;white-space:nowrap}.badge.verified{background:#e6f5ef;color:var(--green)}.badge.review{background:#fff1d6;color:var(--amber)}.badge.target{background:#eef2f7;color:#536579}.badge.competitor{background:#e8f1ff;color:#165daa}
+    .brand-directory{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:7px;margin-top:12px}.brand-jump{border:1px solid var(--line);background:#fff;border-radius:6px;padding:7px 8px;text-align:left;cursor:pointer;color:#344e6d;font:700 12px inherit}.brand-jump:hover,.brand-jump.active{border-color:var(--blue);background:#edf5ff;color:#13579c}
+    .table-box{overflow:auto;border:1px solid var(--line);border-radius:7px;background:#fff;cursor:grab;touch-action:none}.table-box.is-dragging,.table-box.is-dragging *{cursor:grabbing!important;user-select:none}.table-box a{cursor:pointer}.data{width:100%;border-collapse:collapse;min-width:1160px}.data th{background:#eaf1f9;color:#385570;padding:10px 11px;text-align:left;vertical-align:bottom;font-size:12px;font-weight:800;white-space:nowrap}.data td{border-top:1px solid var(--line);padding:11px;vertical-align:top;font-size:12px}.data tr:hover td{background:#f9fbfe}.entity{font-weight:750;color:var(--ink)}.sub{color:#61728a;font-size:11px;margin-top:3px}.product{color:#2f4e71}.contact{display:block;color:#2b608f;font-size:11px;line-height:1.4;margin-top:3px;word-break:break-word}.city-chip{display:inline-block;border:1px solid #cfe0f1;background:#f5f9fe;border-radius:4px;padding:2px 5px;color:#345b84;font-size:11px;font-weight:700}.empty{padding:26px;color:var(--muted);text-align:center}.status-note{padding:9px 11px;background:#fff8e8;border-left:3px solid #d99000;color:#765315;font-size:12px;margin:10px 0}.sources{border:1px solid var(--line);border-radius:7px;background:#fff;padding:15px 16px;color:#52627a;font-size:12px}.sources ul{margin:7px 0 0;padding-left:18px}.sources li{margin:4px 0}.footer{padding:26px 0 38px;color:#6a788c;font-size:12px}
+    @media(max-width:1050px){.region-grid{grid-template-columns:repeat(3,1fr)}.brand-directory{grid-template-columns:repeat(4,minmax(0,1fr))}}@media(max-width:960px){.top nav{display:none}.filters{grid-template-columns:1fr 1fr}.kpis{grid-template-columns:repeat(2,1fr)}}@media(max-width:620px){.top-inner,.wrap{width:min(100% - 26px,1480px)}.hero h1{font-size:25px}.kpis,.filters,.region-grid{grid-template-columns:1fr}.brand-directory{grid-template-columns:repeat(2,minmax(0,1fr))}.top-inner{height:58px}}
+  </style>
+</head>
+<body>
+  <header class="top"><div class="top-inner"><div class="brand">MRDVS 迈尔微视<small>SPAIN MARKET RELATION MAP</small></div><nav><a href="index.html">欧洲总览</a><a href="#competitors">竞品与销售入口</a><a href="#channels">渠道与目标账户</a><a href="#kps">KP 联系表</a><a href="#method">口径与边界</a></nav></div></header>
+  <main class="wrap">
+    <div class="breadcrumb"><a href="index.html">欧洲市场地图</a> / 西班牙 / 竞品—产品—销售入口—渠道—KP</div>
+    <section class="hero"><div class="eyebrow">Spain · strict verified workbook · 2026-08-11</div><h1>西班牙：竞品、产品、渠道、目标账户与 KP</h1><p>按“竞品公司—产品/技术路线—西班牙销售入口或候选渠道—城市/覆盖范围—公开职业 KP”整理。每个字段均保留证据边界：本地官方站或公司入口可证明其存在；授权、产品线、具体城市覆盖和采购关系未被直接证明时，明确标记为待核验。</p><div class="method" id="method"><b>严格核验规则：</b>不把欧洲官网自动视为西班牙本地销售，不把公司入口自动视为品牌代理，不把全球高管写成西班牙销售 KP，也不把目标账户或区域池写成既有客户。公开姓名仅在来源能直接支持当前职业信息时显示；联系方式仅保留公开业务入口。</div></section>
+
+    <section class="kpis"><div class="kpi"><b>€1,687.2B</b><span>2025 名义 GDP（Eurostat）</span></div><div class="kpi"><b>49.13M</b><span>2025 人口（INE）</span></div><div class="kpi"><b id="competitorCount">0</b><span>竞品公司 / 节点</span></div><div class="kpi"><b id="channelCount">0</b><span>渠道、伙伴与目标账户条目</span></div></section>
+
+    <section class="section"><div class="section-head"><div><h2>重点区域与切入顺序</h2><p>区域排序是内部进入优先级假设，不是官方市场规模排名。首批区域应先由渠道访谈、公开项目与实际 PoC 验证。</p></div></div><div class="region-grid" id="regions"></div></section>
+
+    <section class="section" id="competitors"><div class="section-head"><div><h2>竞品、产品与西班牙销售入口</h2><p>一行只陈述来源直接支持的关系。对于没有西班牙本地实体、经销商或产品线证据的欧洲入口，状态为“西班牙范围待确认”，不作为本地代理商信息使用。</p></div></div><div class="filters"><div class="field"><label for="brandFilter">竞品公司</label><select id="brandFilter"><option value="">全部竞品</option></select></div><div class="field"><label for="techFilter">技术路线</label><select id="techFilter"><option value="">全部技术路线</option></select></div><div class="field"><label for="compStatusFilter">证据状态</label><select id="compStatusFilter"><option value="">全部状态</option><option value="verified">西班牙官方/公司入口</option><option value="review">西班牙范围待确认</option><option value="target">本地公司节点/候选渠道</option></select></div><button class="reset" type="button" id="resetCompFilters">重置筛选</button></div><div class="brand-directory" id="brandDirectory" aria-label="按竞品快速筛选"></div><div class="summary" id="compSummary"></div><div class="table-box"><table class="data"><thead><tr><th>竞品公司</th><th>代表产品 / 技术路线</th><th>主要应用</th><th>西班牙销售入口 / 渠道模式</th><th>覆盖范围 / 证据边界</th><th>MRDVS 对标要点</th><th>状态</th><th>官方来源</th></tr></thead><tbody id="competitorRows"></tbody></table></div></section>
+
+    <section class="section" id="channels"><div class="section-head"><div><h2>渠道、SI、OEM 与目标账户清单</h2><p>本表完整导入工作簿“详细渠道库”的 34 条条目。渠道、OEM、终端账户和区域目标池属于不同实体类型；只有明确证实的公司存在性或官方入口被标为已核验，品牌授权和具体可售 SKU 需逐条确认。</p></div></div><div class="filters"><div class="field"><label for="channelTypeFilter">渠道分类</label><select id="channelTypeFilter"><option value="">全部分类</option></select></div><div class="field"><label for="areaFilter">区域 / 城市</label><select id="areaFilter"><option value="">全部区域</option></select></div><div class="field"><label for="channelStatusFilter">关系状态</label><select id="channelStatusFilter"><option value="">全部状态</option><option value="verified">官方/公司入口已核验</option><option value="review">公司入口待确认</option><option value="target">目标线索/区域池</option></select></div><button class="reset" type="button" id="resetChannelFilters">重置筛选</button></div><div class="summary" id="channelSummary"></div><div class="status-note">“区域目标池”“项目生态”“线上路径”不是公司级经销商或客户。它们保留用于后续检索、访谈和项目资格核验，不能作为代理、交易或采购事实。</div><div class="table-box"><table class="data"><thead><tr><th>公司 / 节点</th><th>分类与城市</th><th>业务或角色</th><th>产品 / 场景与下一步</th><th>目标职能</th><th>证据状态</th><th>公开联系入口</th></tr></thead><tbody id="channelRows"></tbody></table></div></section>
+
+    <section class="section" id="kps"><div class="section-head"><div><h2>公开职业 KP 与目标职能</h2><p>公开职业信息只用于合规的公司业务沟通。具名记录中，若为全球管理岗位，会在职责边界中明确说明其不是西班牙本地销售或采购联系人；其余记录保留目标职能与官方入口，不虚构姓名或个人联系方式。</p></div></div><div class="filters"><div class="field"><label for="kpTypeFilter">公司类型</label><select id="kpTypeFilter"><option value="">全部类型</option></select></div><div class="field"><label for="kpNamedFilter">联系人状态</label><select id="kpNamedFilter"><option value="">全部记录</option><option value="named">已公开具名</option><option value="role">目标职能 / 姓名未公开</option></select></div><div class="field"><label for="kpStatusFilter">用途</label><select id="kpStatusFilter"><option value="">全部用途</option><option value="渠道">渠道</option><option value="系统集成商">系统集成商</option><option value="机器人OEM">机器人OEM</option><option value="目标终端">目标终端</option><option value="竞品">竞品</option></select></div><button class="reset" type="button" id="resetKpFilters">重置筛选</button></div><div class="summary" id="kpSummary"></div><div class="table-box"><table class="data"><thead><tr><th>公司</th><th>类型</th><th>姓名 / 职务</th><th>公开业务联系入口</th><th>核验状态与职责边界</th><th>公开来源 / 搜索路径</th></tr></thead><tbody id="kpRows"></tbody></table></div></section>
+
+    <section class="section"><div class="sources"><b>来源与使用边界</b><ul><li>导入来源：<code>MRDVS_Spain_Market_Analysis_Strict_Verified_2026-08-11.xlsx</code>，重点使用“01_市场情况”“02_竞品地图”“03_渠道分类”“04_详细渠道库”“05_渠道客户线索”“06_KP联系表”。</li><li>GDP 为 2025 年现价 Eurostat <a href="https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nama_10_gdp?geo=ES&amp;na_item=B1GQ&amp;unit=CP_MEUR" target="_blank" rel="noreferrer">nama_10_gdp</a>；人口为 INE 2025 年度人口普查首次结果。各公司的 URL 均为严格核验工作簿记录的公开来源。</li><li>工业机器人安装量和机器人密度在本轮未取得可直接复核的西班牙国别值，页面不以其做市场规模、客户价值或优先级结论。</li><li>外联前必须二次确认：产品 SKU、授权范围、城市覆盖、联系人当前职位、进口/税务/RMA 路径。不得采集或推测个人私人邮箱、私人电话。</li></ul></div></section>
+    <footer class="footer">MRDVS 欧洲市场研究 · 西班牙关系页 · 严格核验数据导入：2026-08-11</footer>
+  </main>
+  <script>
+    const regions=[
+      {name:'加泰罗尼亚',cities:'巴塞罗那、瓦列斯、塔拉戈纳',cluster:'汽车、食品饮料、包装、3PL、机器人与机器视觉',products:'S10 Ultra / S11 / M4 / V2 Pro',wave:'首批 · 5/5'},
+      {name:'马德里',cities:'马德里、Corredor del Henares',cluster:'物流、电商履约、3PL、机场周边供应链、自动化',products:'S10 Ultra / V2 Pro',wave:'首批 · 5/5'},
+      {name:'巴斯克',cities:'毕尔巴鄂、维多利亚-加斯特伊兹',cluster:'金属、机床、汽车零部件、工业自动化',products:'S11 / M4',wave:'第二批 · 4/5'},
+      {name:'瓦伦西亚',cities:'瓦伦西亚、萨贡托',cluster:'汽车、包装、港口物流、食品饮料',products:'S10 Ultra / S11 / V2 Pro',wave:'第二批 · 4/5'},
+      {name:'纳瓦拉 / 阿拉贡',cities:'潘普洛纳、萨拉戈萨',cluster:'汽车、仓储物流、风电与装备',products:'S10 Ultra / V2 Pro',wave:'第二批 · 4/5'}
+    ];
+    const competitors=[
+      {brand:'SICK',origin:'德国',product:'Visionary-T / Visionary-B',tech:'dToF / 3D快照',applications:'AMR、体积、避障、车辆辅助',channel:'SICK España 官方站与联系入口',scope:'西班牙官方站与联系入口已确认；不外推为第三方代理关系',position:'以开放 SDK、长距 RGB-D 和移动机器人联合 PoC 差异化',status:'verified',url:'https://www.sick.com/es/es/'},
+      {brand:'ifm',origin:'德国',product:'O3D / O3R',tech:'iToF 3D',applications:'物流、体积、机器人、完整性',channel:'ifm electronic Spain 官方站与联系入口',scope:'西班牙官方站与联系入口已确认',position:'关注 O3R 场景；以量程、彩色深度和 ROS 能力定位',status:'verified',url:'https://www.ifm.com/es/es'},
+      {brand:'KEYENCE',origin:'日本',product:'IV3 / LJ-X',tech:'2D AI / 激光轮廓',applications:'检测、测量、在线质检',channel:'KEYENCE Spain 官方站与询价入口',scope:'西班牙官方站与询价入口已确认；高强度直营模式',position:'对比集成开放度和 TCO，不把 RGB-D 写成其核心路线',status:'verified',url:'https://www.keyence.es/'},
+      {brand:'Cognex',origin:'美国',product:'In-Sight / 3D-L4000',tech:'2D智能 + 3D',applications:'检测、测量、读码、机器人',channel:'Cognex 西班牙语站与官方商务入口',scope:'西班牙语站与官方商务入口已确认；具体 SI/产品组合须项目确认',position:'高端项目从 AMR、导航等非主战品类切入',status:'verified',url:'https://www.cognex.com/es-es'},
+      {brand:'Basler',origin:'德国',product:'blaze / Stereo visard',tech:'ToF + 立体视觉',applications:'机器人、物流、抓取、体积',channel:'Basler 欧洲官方入口',scope:'西班牙本地销售、实体和授权渠道范围待确认',position:'强调场景交付速度、量程与移动机器人价值',status:'review',url:'https://www.baslerweb.com/en/'},
+      {brand:'IDS Imaging',origin:'德国',product:'Ensenso / Nion',tech:'立体视觉 + iToF',applications:'抓取、AMR、科研、测量',channel:'IDS 西班牙语站 / 欧洲官方入口',scope:'西班牙本地销售、实体和授权渠道范围待确认',position:'以工业长距和本地 FAE 服务补位',status:'review',url:'https://www.ids-imaging.com/es/'},
+      {brand:'Baumer',origin:'瑞士',product:'VeriSens / 工业相机',tech:'2D 智能视觉为主',applications:'检测、计数、读码',channel:'Baumer 西班牙语站与本地化销售入口',scope:'西班牙语站与本地化销售入口已确认',position:'3D 深度并非其核心；可作为传感器渠道结构基准',status:'verified',url:'https://www.baumer.com/es/es/'},
+      {brand:'Pepperl+Fuchs',origin:'德国',product:'SmartRunner / 传感器',tech:'激光轮廓 / 区域监控',applications:'轮廓、区域、检测',channel:'Pepperl+Fuchs 西班牙官方站',scope:'西班牙官方站已确认',position:'RGB-D、ROS 与导航并非核心，适合互补提案',status:'verified',url:'https://www.pepperl-fuchs.com/es-es'},
+      {brand:'Datalogic',origin:'意大利',product:'智能相机 / 读码方案',tech:'2D 智能 + 物流自动识别',applications:'读码、检测、物流',channel:'Datalogic 欧洲官方入口',scope:'西班牙本地销售、实体和授权渠道范围待确认',position:'对标其物流渠道，突出 3D 深度与导航',status:'review',url:'https://www.datalogic.com/'},
+      {brand:'LMI Technologies',origin:'加拿大',product:'Gocator',tech:'激光轮廓 / 3D测量',applications:'在线测量、检测、机器人',channel:'LMI 欧洲官方入口',scope:'西班牙本地销售、实体和授权渠道范围待确认',position:'避免微米测量正面竞争；主打导航与体积',status:'review',url:'https://lmi3d.com/'},
+      {brand:'Zivid',origin:'挪威',product:'Zivid 2+ / 3',tech:'结构光彩色 3D',applications:'机器人抓取、物流',channel:'Zivid 欧洲官方联系入口',scope:'西班牙本地销售、实体和授权渠道范围待确认',position:'以性价比与长距补位高端抓取场景',status:'review',url:'https://www.zivid.com/contact'},
+      {brand:'Photoneo',origin:'斯洛伐克',product:'PhoXi / MotionCam-3D',tech:'结构光 / 动态 3D',applications:'抓取、检测、数字化',channel:'Photoneo 欧洲官方入口',scope:'西班牙本地销售、实体和授权渠道范围待确认',position:'高端定价，远距导航并非核心',status:'review',url:'https://www.photoneo.com/'},
+      {brand:'Teledyne Vision Solutions',origin:'加拿大 / 美国',product:'3D / 工业成像组合',tech:'成像 + 激光轮廓',applications:'测量、检测、质量',channel:'Teledyne Vision Solutions 欧洲官方入口',scope:'西班牙本地销售、实体和授权渠道范围待确认',position:'AMR 深度相机不是主线',status:'review',url:'https://www.teledynevisionsolutions.com/'},
+      {brand:'LUCID Vision Labs',origin:'加拿大',product:'Helios2',tech:'iToF 3D',applications:'机器人、物流、体积',channel:'LUCID 欧洲官方入口',scope:'西班牙本地销售、实体和授权渠道范围待确认',position:'西班牙本地触达需借助 VAD / SI',status:'review',url:'https://thinklucid.com/'},
+      {brand:'Mech-Mind 梅卡曼德',origin:'中国',product:'Mech-Eye / Mech-Vision',tech:'结构光 / 激光 3D',applications:'无序抓取、上料、测量',channel:'Mech-Mind 欧洲官方入口',scope:'西班牙本地销售、实体和授权渠道范围待确认',position:'从 AMR、内物流和长距定位差异化',status:'review',url:'https://www.mech-mind.com/'},
+      {brand:'HIKROBOT 海康机器人',origin:'中国',product:'DLS / RGB-D / 智能相机',tech:'激光 / ToF / 2D AI',applications:'检测、测量、物流',channel:'HIKROBOT 欧洲机器视觉官方入口',scope:'西班牙本地销售、实体和授权渠道范围待确认',position:'逐型号核验 3D 能力、渠道排他性与本地支持',status:'review',url:'https://www.hikrobotics.com/en/machinevision/'},
+      {brand:'Orbbec',origin:'中国',product:'Gemini / Femto',tech:'结构光 + iToF/dToF RGB-D',applications:'机器人、扫描、AMR',channel:'Orbbec 欧洲官方入口',scope:'西班牙本地销售、实体和可售 SKU 范围待确认',position:'核验工业认证、长期供货与西班牙渠道归属',status:'review',url:'https://www.orbbec.com/'},
+      {brand:'BCNVision Group',origin:'西班牙',product:'机器视觉 / 自动化方案',tech:'分销 + 集成',applications:'机器视觉、自动化、检测',channel:'BCNVision 西班牙公司站点',scope:'公司业务入口已确认；品牌、代理范围与 3D 能力待确认',position:'潜在渠道，也是需要核验品牌组合的竞争节点',status:'target',url:'https://bcnvisiongroup.com/es'},
+      {brand:'STEMMER IMAGING / Infaimon',origin:'德国 / 西班牙',product:'机器视觉组件与方案',tech:'VAD / 设计导入',applications:'机器视觉、成像、自动化',channel:'Infaimon 公司业务入口',scope:'西班牙覆盖以及品牌/产品线范围待官方确认',position:'优先做品牌冲突评估，争取长距 AMR 互补产品线',status:'target',url:'https://www.infaimon.com/'},
+      {brand:'E2M COUTH',origin:'西班牙',product:'视觉检测系统',tech:'项目型机器视觉',applications:'质量检测、制造自动化',channel:'E2M COUTH 西班牙公司入口',scope:'具体项目、产品线与客户关系待确认',position:'核验是否存在 3D、物流或机器人扩展机会',status:'target',url:'https://www.e2m-couth.com/'}
+    ];
+    const channelRows=[
+      ['STEMMER IMAGING','B 泛欧洲增值分销商(VAD)','欧洲；西班牙范围待确认','欧洲业务入口','机器视觉业务入口；西班牙品牌/产品线范围待官方确认','先做产品冲突、样机和西班牙 FAE 覆盖访谈','Machine Vision Sales / Product Management','review','https://www.stemmer-imaging.com/en/contact/'],
+      ['Infaimon','C 专业机器视觉渠道','西班牙','以公司官网公开地址为准','机器视觉业务入口；品牌、代理范围与 3D 能力待确认','优先评估长距 RGB-D、AMR 及物流客户覆盖','Business Development / Product Management','review','https://www.infaimon.com/'],
+      ['BCNVision Group','C 专业视觉分销商','西班牙','巴塞罗那','机器视觉/自动化业务入口；品牌、代理范围与 3D 能力待确认','确认 3D 相机组合、排他性与 AMR/物流项目经验','Dirección comercial / Ingeniería','review','https://bcnvisiongroup.com/es/contacto'],
+      ['Iberoptics Sistemas de Vision','C 专业视觉分销商','西班牙','以公司官网公开地址为准','工业视觉业务入口；品牌、代理范围与 3D 能力待确认','核验 3D、机器人及物流项目能力；提交样机规格','Commercial / Technical Sales','review','https://www.iberoptics.es/contacto/'],
+      ['SICK España','A 直属销售/分公司','全国','西班牙','SICK 自有销售、现场销售、FAE 与服务入口','竞品监测：对标行业内容、现场 Demo 与伙伴案例','Machine Vision / Robotics Sales','verified','https://www.sick.com/es/es/'],
+      ['ifm electronic Spain','A 直属销售/分公司','全国','西班牙','ifm O3D/O3R，直销、电商、伙伴网入口','竞品监测：跟踪公开应用、伙伴与 O3R 项目定位','Vision / Robotics Product Management','verified','https://www.ifm.com/es/es'],
+      ['KEYENCE Spain','A 直属销售/分公司','全国','西班牙','KEYENCE 自有，高频现场销售与 Demo','竞品监测：对标销售响应速度和演示流程','Machine Vision Sales','verified','https://www.keyence.es/inquiry/contact/'],
+      ['Cognex Spain','A 直属销售/分公司','全国','西班牙','Cognex 自有，直销与系统集成商入口','竞品监测：从公开 SI/客户案例提取行业线索','3D Vision Sales / Partner Manager','verified','https://www.cognex.com/es-es/company/contact-us'],
+      ['Baumer Spain','A 直属销售/分公司','全国','西班牙','Baumer 自有，传感器与工业客户支持','竞品监测：以传感器客户结构和渠道打法为基准','Sensor / Vision Sales','verified','https://www.baumer.com/es/es/'],
+      ['Pepperl+Fuchs España','A 直属销售/分公司','全国','西班牙','工业传感器、分销网络入口','竞品监测：关注分销网络及物流/制造项目入口','Industrial Sensors / Sales','verified','https://www.pepperl-fuchs.com/es-es'],
+      ['Datalogic Iberia','A 直属销售/分公司','全国','西班牙','自动识别、物流与制造支持入口','竞品监测：比较读码与物流渠道，对接 3D 深度空白','Machine Vision / Automation Sales','review','https://www.datalogic.com/'],
+      ['Basler Europe','A 欧洲直属销售','欧洲；西班牙范围待确认','欧洲业务入口','3D 产品、软件生态','核验西班牙项目的直销/分销归属和伙伴','3D Product Management','review','https://www.baslerweb.com/en/contact/'],
+      ['IDS Imaging Europe','A 欧洲直属销售','欧洲；西班牙范围待确认','欧洲业务入口','在线销售、SDK、技术支持','对标开发者体验与网店路径','3D Product Management / Sales','review','https://en.ids-imaging.com/contact.html'],
+      ['Mech-Mind Europe','A 欧洲直属销售','欧洲；西班牙范围待确认','欧洲业务入口','Mech-Eye/Mech-Vision，销售、Demo、机器人方案','核验西班牙项目、伙伴与抓取场景打法','Spain/Europe Sales / Partner Manager','review','https://www.mech-mind.com/faqs.html'],
+      ['HIKROBOT Machine Vision','A 欧洲销售入口','欧洲；西班牙范围待确认','欧洲业务入口','机器视觉产品与软件','通过渠道逐项核验实际产品、价格和支持','Machine Vision Sales / Channel','review','https://www.hikrobotics.com/en/machinevision/'],
+      ['Orbbec Europe','A 厂商欧洲销售入口','欧洲；西班牙范围待确认','欧洲业务入口','RGB-D 产品入口；西班牙渠道与可售 SKU 待确认','确认 STEMMER 等在西班牙的可售 SKU 和支持深度','Europe Sales / Distribution','review','https://www.orbbec.com/contact/'],
+      ['Zivid Europe','A 欧洲直属销售','欧洲；西班牙范围待确认','欧洲业务入口','机器人应用支持','跟踪高端抓取项目，避免无差异竞争','Regional Sales / Applications','review','https://www.zivid.com/contact'],
+      ['Photoneo Europe','A 欧洲直属销售','欧洲；西班牙范围待确认','欧洲业务入口','PhoXi/MotionCam-3D，3D 视觉与机器人方案','识别高端抓取与动态 3D 的场景边界','Regional Sales / Partner Manager','review','https://www.photoneo.com/contact'],
+      ['LMI Technologies Europe','A 厂商欧洲销售入口','欧洲；西班牙范围待确认','欧洲业务入口','Gocator，3D 测量与应用工程','将精密测量项目与 MRDVS 导航/物流项目分开','Regional Sales / Distributor','review','https://lmi3d.com/contact/'],
+      ['Teledyne Vision Solutions','A 厂商欧洲销售入口','欧洲；西班牙范围待确认','欧洲业务入口','工业成像组合与技术支持','观察西班牙分销网络与客户行业','Regional Sales / Distribution','review','https://www.teledynevisionsolutions.com/en-gb/support/support-center/'],
+      ['E2M COUTH','D 机器视觉/自动化系统集成商','西班牙','巴塞罗那','机器视觉系统业务入口；3D/机器人/物流项目待核验','提交联合 Demo 提案，核验实际项目能力','Project Engineering / Business Development','review','https://www.e2m-couth.com/'],
+      ['Aritex','D 机器视觉/自动化系统集成商','西班牙 / 国际','以公司官网公开地址为准','工业自动化业务入口；具体机器视觉产品线待确认','以汽车、装配和物流的非接触 3D 感知需求切入','Automation / Robotics Business Development','review','https://www.aritex-es.com/'],
+      ['Kivnon','E 机器人OEM/技术伙伴','西班牙 / 国际','巴塞罗那区域','AGV/AMR 移动机器人产品与项目交付','验证 ROS、长距感知、货叉/托盘与导航 PoC','Product / Engineering / Purchasing','verified','https://www.kivnon.com/contact/'],
+      ['Mecalux','E 机器人OEM/技术伙伴','西班牙 / 国际','巴塞罗那','仓储系统、自动化项目入口','探索仓储占位、体积、AMR/自主叉车感知','Automation / Product / Purchasing','verified','https://www.mecalux.com/contact'],
+      ['ABB / ASTI Mobile Robotics','E 机器人OEM/技术伙伴','西班牙 / 国际','布尔戈斯及全球','AMR/AGV，移动机器人与工业自动化','战略账户：先确认接口、认证与技术缺口','AMR Product / Engineering / Procurement','verified','https://new.abb.com/products/robotics/es/autonomous-mobile-robots'],
+      ['Mecalux 项目生态','D 项目生态（非独立渠道公司）','全国','全国项目覆盖','仓储自动化生态；不宣称已合作或有独立 SI 网络','仅作为项目生态线索，逐项目验证','Project Engineering / Integrator Relations','target','https://www.mecalux.com/'],
+      ['Gestamp','E 终端技术伙伴','全国 / 国际','马德里及工厂网络','汽车零部件制造的自动化需求入口','通过 SI 筛选上下料、质量辅助与内物流项目','Automation / Manufacturing Engineering / Purchasing','verified','https://www.gestamp.com/Contact-Us'],
+      ['Ficosa','E 终端技术伙伴','全国 / 国际','巴塞罗那及工厂网络','汽车技术与电子制造入口','通过加泰罗尼亚 SI 筛选自动化和物流项目','Operations / Automation / Purchasing','verified','https://www.ficosa.com/company/global-presence/'],
+      ['SEAT S.A.','E 终端技术伙伴','西班牙','马托雷尔','汽车制造的制造工程与物流入口','经公开供应商流程或 SI 引荐；不是现有客户','Manufacturing Engineering / Logistics / Purchasing','verified','https://www.seat-cupra-mediacenter.com/'],
+      ['Navarra/Aragon automation SI pool','D 区域目标池（非公司实体）','纳瓦拉 / 阿拉贡','区域目标池','汽车与仓储自动化项目的研究假设','补全公司级名单、品牌与项目关系后再外联','Automation Business Development','target','https://www.icex.es/'],
+      ['Basque automation SI pool','D 区域目标池（非公司实体）','巴斯克','区域目标池','金属、机床、汽车自动化项目的研究假设','按公司官网和案例二次核验','Automation Business Development','target','https://www.icex.es/'],
+      ['Valencia logistics SI pool','D 区域目标池（非公司实体）','瓦伦西亚','区域目标池','港口、包装、食品物流项目的研究假设','从物流/包装项目反向找到 SI，再验证资格','Logistics Automation Business Development','target','https://www.icex.es/'],
+      ['Industrial e-commerce path','F 线上商城/工业电商','全国','线上','竞品官方网店与工业电商路径','仅在 CE、库存、技术支持和 RMA 明确后上架','E-commerce / Product Operations','target','https://www.ids-imaging.com/es/'],
+      ['ROS / software ecosystem','G 技术合作/OEM生态','全国 / 欧洲','线上 + 项目','机器人软件与开发者生态','以 V2 Pro、ROS 和公开 SDK Demo 建立可复现适配','Robotics Software / Integration','target','https://www.orbbec.com/']
+    ].map(([company,type,area,city,role,next,kp,status,url])=>({company,type,area,city,role,next,kp,status,url}));
+    const kps=[
+      ['STEMMER IMAGING','渠道',null,'Machine Vision Sales / Product Management（目标职能）','待确认','本轮未取得当前西班牙职责的具名公开资料；仅保留公司入口','https://www.stemmer-imaging.com/en/company/management','https://www.linkedin.com/company/stemmer-imaging'],
+      ['Infaimon','渠道',null,'Machine Vision Sales / Product Management（目标职能）','待确认','本轮未取得当前西班牙职责的具名公开资料；仅保留公司入口','https://www.infaimon.com/','公司官网'],
+      ['BCNVision Group','渠道',null,'Commercial Director / Engineering Manager','待联系','仅公司公开入口；搜索结果不作为职位证明','https://bcnvisiongroup.com/es/contacto','LinkedIn 公司页搜索：BCNVision Group'],
+      ['Iberoptics Sistemas de Vision','渠道',null,'Technical Sales / Product Manager','待联系','仅公司公开入口','https://www.iberoptics.es/contacto/','LinkedIn 公司页搜索：Iberoptics Sistemas de Vision'],
+      ['E2M COUTH','系统集成商',null,'Business Development / Project Engineering','待联系','仅公司公开入口','https://www.e2m-couth.com/','LinkedIn 公司页搜索：E2M COUTH'],
+      ['Aritex','系统集成商',null,'Automation / Robotics Business Development','待联系','仅公司公开入口','https://www.aritex-es.com/','LinkedIn 公司页搜索：Aritex robotics Spain'],
+      ['Kivnon','机器人OEM',null,'Product Manager / Engineering / Purchasing','待联系','仅公司公开入口；优先技术负责人','https://www.kivnon.com/contact/','LinkedIn 公司页搜索：Kivnon product engineering purchasing'],
+      ['Mecalux','机器人OEM/终端',null,'Automation Product / Intralogistics Engineering / Purchasing','待联系','仅公司公开入口','https://www.mecalux.com/contact','LinkedIn 公司页搜索：Mecalux automation product engineering'],
+      ['ABB / ASTI Mobile Robotics','机器人OEM',null,'AMR Product / Engineering / Procurement','待联系','外联前确认实体与地区负责范围','https://new.abb.com/products/robotics/es/autonomous-mobile-robots','LinkedIn 公司页搜索：ABB ASTI Mobile Robotics'],
+      ['Gestamp','目标终端',null,'Manufacturing Engineering / Automation / Purchasing','待联系','仅公司公开入口','https://www.gestamp.com/Contact-Us','LinkedIn 公司页搜索：Gestamp automation manufacturing engineering'],
+      ['Ficosa','目标终端',null,'Operations / Automation / Purchasing','待联系','仅公司公开入口','https://www.ficosa.com/company/global-presence/','LinkedIn 公司页搜索：Ficosa automation purchasing'],
+      ['SEAT S.A.','目标终端',null,'Manufacturing Engineering / Logistics / Supplier Management','待联系','使用公开供应商流程或 SI 引荐','https://www.seat-cupra-mediacenter.com/','LinkedIn 公司页搜索：SEAT manufacturing logistics procurement'],
+      ['SICK España','竞品',null,'Machine Vision / Robotics Sales','竞品监测','仅用于竞品打法研究，不作非必要个人外联','https://www.sick.com/es/es/','LinkedIn 公司页搜索：SICK Spain machine vision'],
+      ['ifm electronic Spain','竞品',null,'Vision / Robotics Product Management','竞品监测','仅用于竞品打法研究','https://www.ifm.com/es/es','LinkedIn 公司页搜索：ifm Spain O3R'],
+      ['KEYENCE Spain','竞品',null,'Machine Vision Sales','竞品监测','仅用于竞品打法研究','https://www.keyence.es/','LinkedIn 公司页搜索：KEYENCE Spain machine vision'],
+      ['Cognex Spain','竞品','Matthew Moschner','President and Chief Executive Officer (Cognex Corporation)','已核验：SEC 申报','全球公司高管，不是西班牙本地销售联系人','https://www.sec.gov/Archives/edgar/data/851205/000085120526000040/cgnx-20260405.htm','https://www.cognex.com/es-es'],
+      ['Basler','竞品','Hardy Mehl','Chief Executive Officer (Basler AG)','已核验：公司官方页','全球公司高管，不是西班牙本地销售联系人','https://www.baslerweb.com/en/company/','https://www.baslerweb.com/en/contact/'],
+      ['IDS Imaging','竞品',null,'3D Product Management / Sales','竞品监测','仅用于竞品打法研究','https://en.ids-imaging.com/contact.html','LinkedIn 公司页搜索：IDS Imaging Spain'],
+      ['HIKROBOT','中国竞品',null,'Machine Vision Channel / Product','竞品监测','仅用于竞品渠道结构研究','https://www.hikrobotics.com/en/machinevision/','LinkedIn 公司页搜索：HIKROBOT Spain machine vision'],
+      ['Orbbec','中国竞品',null,'Europe Sales / Distribution（目标职能）','待确认','未保留未能直接复核为当前任职的具名信息','https://www.orbbec.com/contact/','https://www.orbbec.com/'],
+      ['Mech-Mind','中国竞品','Tianlan Shao','Founder and CEO','已核验：官方团队页','全球公司高管，不是西班牙本地伙伴经理','https://www.mech-mind.com/ourteam/our-team.html','https://www.mech-mind.com/'],
+      ['Photoneo','竞品',null,'Regional Sales / Partner Manager（目标职能）','待确认','仅保留公司公开入口','https://www.photoneo.com/contact','https://www.photoneo.com/'],
+      ['Zivid','竞品','Mikkel Orheim','SVP Sales and Business Development','已核验：官方管理团队','负责全球销售、市场和客户支持；不是西班牙本地联系人','https://www.zivid.com/leadership-team','https://www.zivid.com/contact'],
+      ['西班牙区域 SI 目标池','区域渠道',null,'Automation Business Development / Technical Director','待研究','在公司级官网和公开职业页二次核验后再外联','https://www.icex.es/','LinkedIn 搜索：Spain machine vision system integrator Barcelona/Madrid'],
+      ['西班牙物流目标池','区域终端',null,'Logistics Automation / Engineering / Procurement','待研究','不收集私人联系方式；优先渠道暖引荐','https://www.icex.es/','LinkedIn 搜索：Spain intralogistics automation engineering']
+    ].map(([company,type,name,title,status,boundary,url,path])=>({company,type,name,title,status,boundary,url,path}));
+    const esc=value=>String(value===null||value===undefined||value===''?'姓名未公开':value).replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+    const unique=(rows,key)=>[...new Set(rows.map(row=>row[key]).filter(Boolean))].sort((a,b)=>String(a).localeCompare(String(b),'zh-CN'));
+    const selectFill=(node,values)=>node.insertAdjacentHTML('beforeend',values.map(value=>`<option value="${esc(value)}">${esc(value)}</option>`).join(''));
+    const badge=status=>({verified:'<span class="badge verified">官方/公司入口已核验</span>',review:'<span class="badge review">范围或关系待确认</span>',target:'<span class="badge target">目标线索 / 节点</span>'}[status]);
+    const officialLink=url=>`<a class="contact" href="${esc(url)}" target="_blank" rel="noreferrer">打开公开来源 ↗</a>`;
+    document.querySelector('#regions').innerHTML=regions.map(region=>`<article class="region"><h3>${region.name}</h3><p>${region.cities}<br>${region.cluster}</p><b>${region.wave} · ${region.products}</b></article>`).join('');
+    document.querySelector('#competitorCount').textContent=competitors.length;
+    document.querySelector('#channelCount').textContent=channelRows.length;
+
+    const brandFilter=document.querySelector('#brandFilter'),techFilter=document.querySelector('#techFilter'),compStatusFilter=document.querySelector('#compStatusFilter');
+    selectFill(brandFilter,unique(competitors,'brand')); selectFill(techFilter,unique(competitors,'tech'));
+    const directory=document.querySelector('#brandDirectory');
+    directory.innerHTML=competitors.map(row=>`<button class="brand-jump" type="button" data-brand="${esc(row.brand)}">${esc(row.brand)}<br><span class="sub">${esc(row.origin)} · ${esc(row.tech)}</span></button>`).join('');
+    function renderCompetitors(){
+      const rows=competitors.filter(row=>(!brandFilter.value||row.brand===brandFilter.value)&&(!techFilter.value||row.tech===techFilter.value)&&(!compStatusFilter.value||row.status===compStatusFilter.value));
+      document.querySelector('#compSummary').innerHTML=`<span class="badge competitor">${rows.length} 条竞品记录</span><span>西班牙本地入口、欧洲入口与本地公司节点按证据边界分开显示。</span>`;
+      document.querySelector('#competitorRows').innerHTML=rows.length?rows.map(row=>`<tr><td><span class="entity">${row.brand}</span><br><span class="sub">总部/来源：${row.origin}</span></td><td><span class="product">${row.product}</span><br><span class="sub">${row.tech}</span></td><td>${row.applications}</td><td><span class="entity">${row.channel}</span></td><td><span class="sub">${row.scope}</span></td><td>${row.position}</td><td>${badge(row.status)}</td><td>${officialLink(row.url)}</td></tr>`).join(''):'<tr><td colspan="8" class="empty">没有符合筛选条件的竞品记录。</td></tr>';
+      document.querySelectorAll('.brand-jump').forEach(button=>button.classList.toggle('active',button.dataset.brand===brandFilter.value));
+    }
+    [brandFilter,techFilter,compStatusFilter].forEach(node=>node.addEventListener('change',renderCompetitors));
+    document.querySelector('#resetCompFilters').addEventListener('click',()=>{brandFilter.value='';techFilter.value='';compStatusFilter.value='';renderCompetitors()});
+    directory.addEventListener('click',event=>{const button=event.target.closest('[data-brand]');if(!button)return;brandFilter.value=button.dataset.brand;renderCompetitors();document.querySelector('#competitors').scrollIntoView({behavior:'smooth',block:'start'})});
+
+    const channelTypeFilter=document.querySelector('#channelTypeFilter'),areaFilter=document.querySelector('#areaFilter'),channelStatusFilter=document.querySelector('#channelStatusFilter');
+    selectFill(channelTypeFilter,unique(channelRows,'type')); selectFill(areaFilter,unique(channelRows,'area'));
+    function renderChannels(){
+      const rows=channelRows.filter(row=>(!channelTypeFilter.value||row.type===channelTypeFilter.value)&&(!areaFilter.value||row.area===areaFilter.value)&&(!channelStatusFilter.value||row.status===channelStatusFilter.value));
+      document.querySelector('#channelSummary').innerHTML=`<span class="badge competitor">${rows.length} 条条目</span><span>当前条目包含渠道、SI、OEM、终端账户、区域池和生态路径，类型不同且不相互替代。</span>`;
+      document.querySelector('#channelRows').innerHTML=rows.length?rows.map(row=>`<tr><td><span class="entity">${row.company}</span></td><td><span class="city-chip">${row.type}</span><br><span class="sub">覆盖：${row.area}<br>城市/基地：${row.city}</span></td><td>${row.role}</td><td><span class="product">下一步：${row.next}</span></td><td>${row.kp}</td><td>${badge(row.status)}</td><td>${officialLink(row.url)}</td></tr>`).join(''):'<tr><td colspan="7" class="empty">没有符合筛选条件的条目。</td></tr>';
+    }
+    [channelTypeFilter,areaFilter,channelStatusFilter].forEach(node=>node.addEventListener('change',renderChannels));
+    document.querySelector('#resetChannelFilters').addEventListener('click',()=>{channelTypeFilter.value='';areaFilter.value='';channelStatusFilter.value='';renderChannels()});
+
+    const kpTypeFilter=document.querySelector('#kpTypeFilter'),kpNamedFilter=document.querySelector('#kpNamedFilter'),kpStatusFilter=document.querySelector('#kpStatusFilter');
+    selectFill(kpTypeFilter,unique(kps,'type'));
+    function renderKps(){
+      const rows=kps.filter(row=>(!kpTypeFilter.value||row.type===kpTypeFilter.value)&&(!kpNamedFilter.value||(kpNamedFilter.value==='named'?Boolean(row.name):!row.name))&&(!kpStatusFilter.value||row.type.includes(kpStatusFilter.value)));
+      const namedCount=rows.filter(row=>row.name).length;
+      document.querySelector('#kpSummary').innerHTML=`<span class="badge competitor">${rows.length} 条职业信息记录</span><span>其中 ${namedCount} 条公开具名；其余保留目标职能和公司业务入口。</span>`;
+      document.querySelector('#kpRows').innerHTML=rows.length?rows.map(row=>`<tr><td><span class="entity">${row.company}</span></td><td>${row.type}</td><td><span class="entity">${row.name||'姓名未公开'}</span><br><span class="sub">${row.title}</span></td><td>${officialLink(row.url)}</td><td><span class="entity">${row.status}</span><br><span class="sub">${row.boundary}</span></td><td><a class="contact" href="${esc(row.url)}" target="_blank" rel="noreferrer">公开来源 ↗</a><br><span class="sub">${row.path}</span></td></tr>`).join(''):'<tr><td colspan="6" class="empty">没有符合筛选条件的职业信息记录。</td></tr>';
+    }
+    [kpTypeFilter,kpNamedFilter,kpStatusFilter].forEach(node=>node.addEventListener('change',renderKps));
+    document.querySelector('#resetKpFilters').addEventListener('click',()=>{kpTypeFilter.value='';kpNamedFilter.value='';kpStatusFilter.value='';renderKps()});
+
+    document.querySelectorAll('.table-box').forEach(tableBox=>{
+      let startX=0,startY=0,startScroll=0,startPageY=0,moved=false,suppressClick=false;
+      tableBox.addEventListener('pointerdown',event=>{if(event.button!==0||event.target.closest('a,button,select,input,textarea,label'))return;startX=event.clientX;startY=event.clientY;startScroll=tableBox.scrollLeft;startPageY=window.scrollY;moved=false;tableBox.setPointerCapture(event.pointerId)});
+      tableBox.addEventListener('pointermove',event=>{if(!tableBox.hasPointerCapture(event.pointerId))return;const dx=event.clientX-startX,dy=event.clientY-startY;if(Math.hypot(dx,dy)<4)return;moved=true;tableBox.classList.add('is-dragging');tableBox.scrollLeft=startScroll-dx;window.scrollTo(0,startPageY-dy)});
+      const endDrag=event=>{if(!tableBox.hasPointerCapture(event.pointerId))return;tableBox.releasePointerCapture(event.pointerId);tableBox.classList.remove('is-dragging');suppressClick=moved;setTimeout(()=>{suppressClick=false},0)};
+      tableBox.addEventListener('pointerup',endDrag);tableBox.addEventListener('pointercancel',endDrag);tableBox.addEventListener('click',event=>{if(!suppressClick)return;event.preventDefault();event.stopPropagation()},true);
+    });
+    renderCompetitors();renderChannels();renderKps();
+  </script>
+</body>
+</html>
