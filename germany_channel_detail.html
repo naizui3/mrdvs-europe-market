@@ -16,19 +16,14 @@
 .channel-kp span,.channel-kp small{font-size:10.5px;color:#6b6254}
 .channel-kp .links{margin-top:4px}
 .channel-no-kp{font-size:10.5px;color:var(--muted);font-style:italic}
-.channel-kp-map{margin-top:16px}
-.channel-kp-map h3{font-size:14px;margin:0 0 8px}
-.channel-kp-map table{width:100%;border-collapse:collapse;min-width:900px}
-.channel-kp-map th,.channel-kp-map td{border:1px solid var(--line);padding:8px;font-size:11px;vertical-align:top}
-.channel-kp-map th{background:#eef4fa;color:#385570}
-
+    #market,#records{scroll-margin-top:68px}
 </style>
 </head>
 <body>
-  <header class="top"><div class="top-inner"><div class="brand">MRDVS 迈尔微视<small>GERMANY CHANNEL RELATION MAP</small></div><nav><a href="index.html">欧洲总览</a><a href="#market">市场概览</a><a href="#records">关系记录</a><a href="#method">口径与边界</a></nav></div></header>
+  <header class="top"><div class="top-inner"><div class="brand">MRDVS 迈尔微视<small>GERMANY CHANNEL RELATION MAP</small></div><nav><a href="index.html">欧洲总览</a><a href="#market">市场概览</a><a href="#records">关系记录</a></nav></div></header>
   <main class="wrap">
     <div class="breadcrumb"><a href="index.html">欧洲市场地图</a> / 德国 / 竞品—产品—城市渠道—KP</div>
-    <section class="hero"><div class="eyebrow">Germany · imported source: 2026-08-06 workbook</div><h1>德国：竞品、产品、城市渠道与 KP</h1><p>本页按附件的行级记录保留竞品、具体产品/系列、德国销售渠道、城市/覆盖、公开联系信息、KP/目标职能及证据 URL。品牌总部、VAD、系统集成商与区域技术分支分开呈现，不将案例或历史线索误写为当前授权关系。</p><div class="method" id="method"><b>关系判定规则：</b>每行只支持“该竞品的该产品/系列”在附件披露的渠道与覆盖范围内的关系。未公开具名 KP 时保留原表目标职能；不猜测个人邮箱、私人手机号或未披露的产品授权范围。</div></section>
+    <section class="hero"><div class="eyebrow">Germany · imported source: 2026-08-06 workbook</div><h1>德国：竞品、产品、城市渠道与 KP</h1><p>本页按附件的行级记录保留竞品、具体产品/系列、德国销售渠道、城市/覆盖、公开联系信息、KP/目标职能及证据 URL。品牌总部、VAD、系统集成商与区域技术分支分开呈现，不将案例或历史线索误写为当前授权关系。</p></section>
     <section class="kpis"><div class="kpi"><b>20</b><span>已导入竞品公司 Sheet</span></div><div class="kpi"><b>102</b><span>公开渠道节点样本</span></div><div class="kpi"><b id="kpRecordCount">0</b><span>KP / 目标职能记录</span></div><div class="kpi"><b>76</b><span>公开具名 KP（源表口径）</span></div></section>
     <section class="section" id="market"><div class="section-head"><div><h2>德国市场与渠道结构</h2><p>以下数值与渠道分类来自德国附件“管理驾驶舱”；机器视觉营收为德国企业全球营收，不等同德国国内市场规模。</p></div></div><div class="metrics"><div class="metric"><b>€4.47T</b><span>2025 名义 GDP</span><small>实际 GDP 增速 0.2%</small></div><div class="metric"><b>26,982</b><span>2024 工业机器人新增安装</span><small>机器人引导是关键视觉入口</small></div><div class="metric"><b>278,881</b><span>工业机器人保有量</span><small>密度 449 台 / 万名制造业员工</small></div><div class="metric"><b>€3.1B</b><span>机器视觉企业全球营收</span><small>德国企业 2024 年口径</small></div><div class="metric"><b>130+</b><span>VDMA 机器视觉成员</span><small>供给成熟、竞争密集</small></div></div></section>
     <section class="section"><div class="section-head"><div><h2>渠道类型与行动定位</h2><p>“节点数”是附件中公开、高相关、可执行样本的统计，不是德国市场的法律意义完整渠道名录。</p></div></div><div class="metrics" id="categoryMetrics"></div></section>
@@ -153,23 +148,6 @@ function renderRelationDetail(brand){
       </div>
     </div>
 
-    <div class="channel-kp-map">
-      <h3>渠道 × KP 对应表</h3>
-      <div class="table-box">
-        <table>
-          <thead><tr><th>销售 / 经销渠道</th><th>城市 / 覆盖</th><th>对应 KP</th><th>KP 联系方式</th></tr></thead>
-          <tbody>${d.salesChannels.map(c=>{
-            const ckps=kpsForChannel(c.id);
-            return `<tr>
-              <td><b>${relEsc(c.name)}</b><div class="sub">${relEsc(c.type)}</div></td>
-              <td>${relEsc(c.location)}</td>
-              <td>${ckps.length?ckps.map(k=>`<div><b>${relEsc(k.name)}</b>${k.role?`<div class="sub">${relEsc(k.role)}</div>`:''}</div>`).join('<br>'):'—'}</td>
-              <td>${ckps.length?ckps.map(k=>`${k.phone?`电话：${relEsc(k.phone)}<br>`:''}${k.email?`邮箱：${relEsc(k.email)}`:''}`).join('<br><br>'):(c.phone?`渠道电话：${relEsc(c.phone)}<br>`:'')+(c.email?`渠道邮箱：${relEsc(c.email)}`:'')}</td>
-            </tr>`;
-          }).join('')}</tbody>
-        </table>
-      </div>
-    </div>
   </div>`;
 }
 (function(){const filter=document.getElementById('brandFilter'),section=document.getElementById('company-relations');if(!filter||!section)return;function sync(){const b=filter.value;if(!b||!companyRelationDetails[b]){section.classList.add('relation-hidden');document.getElementById('relationDetail').innerHTML='';return}section.classList.remove('relation-hidden');renderRelationDetail(b)}filter.addEventListener('change',()=>{sync();if(filter.value&&!section.classList.contains('relation-hidden'))requestAnimationFrame(()=>section.scrollIntoView({behavior:'smooth',block:'start'}))});document.getElementById('brandDirectory')?.addEventListener('click',()=>requestAnimationFrame(()=>{sync();if(filter.value&&!section.classList.contains('relation-hidden'))section.scrollIntoView({behavior:'smooth',block:'start'})}));document.getElementById('resetFilters')?.addEventListener('click',()=>requestAnimationFrame(sync));sync()})();
