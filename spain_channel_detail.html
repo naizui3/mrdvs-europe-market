@@ -19,19 +19,23 @@
     @media(max-width:1050px){.region-grid{grid-template-columns:repeat(3,1fr)}.brand-directory{grid-template-columns:repeat(4,minmax(0,1fr))}}@media(max-width:960px){.top nav{display:none}.filters{grid-template-columns:1fr 1fr}.kpis{grid-template-columns:repeat(2,1fr)}}@media(max-width:620px){.top-inner,.wrap{width:min(100% - 26px,1480px)}.hero h1{font-size:25px}.kpis,.filters,.region-grid{grid-template-columns:1fr}.brand-directory{grid-template-columns:repeat(2,minmax(0,1fr))}.top-inner{height:58px}}
   
 .relation-hidden{display:none!important}.relation-shell{border:1px solid var(--line);background:#fff;border-radius:8px;padding:16px}.relation-grid{display:grid;grid-template-columns:.9fr 1.1fr 1.9fr;gap:12px;align-items:start}.relation-node{border:1px solid var(--line);border-radius:7px;background:#fbfdff;padding:10px 11px;margin-bottom:8px}.brand-node{border-left:4px solid var(--blue)}.product-node{border-left:4px solid #557aa8}.channel-node{border-left:4px solid var(--green)}.relation-node b{display:block;margin-bottom:3px}.relation-node span,.relation-node small{display:block;color:var(--muted);font-size:11px;white-space:pre-line}.country-note{margin-top:12px;padding:9px 11px;background:#eef7ff;border-left:3px solid var(--blue);font-size:12px}.channel-kps{margin-top:9px;padding-top:8px;border-top:1px dashed var(--line)}.channel-kp{margin-top:6px;padding:7px 8px;background:#fffaf0;border:1px solid #f0dfb9;border-radius:6px}.relation-matrix,.channel-kp-map{margin-top:16px}.relation-matrix h3,.channel-kp-map h3{font-size:14px;margin:0 0 8px}.relation-matrix table,.channel-kp-map table{width:100%;border-collapse:collapse;min-width:900px}.relation-matrix th,.relation-matrix td,.channel-kp-map th,.channel-kp-map td{border:1px solid var(--line);padding:8px;font-size:11px;vertical-align:top}.relation-matrix th,.channel-kp-map th{background:#eef4fa;color:#385570}.rel-yes{font-weight:800;color:var(--green)}.rel-scope{font-weight:800;color:var(--amber)}@media(max-width:1000px){.relation-grid{grid-template-columns:1fr 1fr}}@media(max-width:620px){.relation-grid{grid-template-columns:1fr}}
+    /* Spain follows the same information architecture as the Germany relation page. */
+    #market,#records,#company-relations{scroll-margin-top:68px}
+    .metrics{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}.metric{background:#fff;border:1px solid var(--line);border-top:3px solid var(--blue);padding:11px 12px}.metric b{display:block;font-size:20px;color:#143f70}.metric span{display:block;font-size:12px;font-weight:750;color:#334f70;margin-top:2px}.metric small{display:block;font-size:11px;color:var(--muted);margin-top:2px}.badge.direct{background:#e8f1ff;color:#165daa}.links{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px}.links a{font-size:11px;font-weight:700}.kp-name{font-weight:700}.relation-col h3{margin:0 0 8px;font-size:13px;color:#4c6581}.relation-node.kp-node{border-left:4px solid var(--amber)}.spain-records .filters{grid-template-columns:1fr 1fr 1fr 1fr auto}.spain-records .data{min-width:1740px}.spain-records .data td,.spain-records .city-chip{white-space:pre-line}.legacy-source{display:none!important}
+    @media(max-width:1050px){.metrics{grid-template-columns:repeat(3,1fr)}}@media(max-width:620px){.metrics{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-  <header class="top"><div class="top-inner"><div class="brand">MRDVS 迈尔微视<small>SPAIN MARKET RELATION MAP</small></div><nav><a href="index.html">欧洲总览</a><a href="#competitors">竞品与销售入口</a><a href="#channels">渠道与目标账户</a><a href="#kps">KP 联系表</a><a href="#method">口径与边界</a></nav></div></header>
+  <header class="top"><div class="top-inner"><div class="brand">MRDVS 迈尔微视<small>SPAIN MARKET RELATION MAP</small></div><nav><a href="index.html">欧洲总览</a><a href="#market">市场概览</a><a href="#records">关系记录</a><a href="#channels">渠道与目标账户</a><a href="#kps">KP 联系表</a></nav></div></header>
   <main class="wrap">
     <div class="breadcrumb"><a href="index.html">欧洲市场地图</a> / 西班牙 / 竞品—产品—销售入口—渠道—KP</div>
-    <section class="hero"><div class="eyebrow">Spain · strict verified workbook · 2026-08-11</div><h1>西班牙：竞品、产品、渠道、目标账户与 KP</h1><p>按“竞品公司—产品/技术路线—西班牙销售入口或候选渠道—城市/覆盖范围—公开职业 KP”整理。每个字段均保留证据边界：本地官方站或公司入口可证明其存在；授权、产品线、具体城市覆盖和采购关系未被直接证明时，明确标记为待核验。</p><div class="method" id="method"><b>严格核验规则：</b>不把欧洲官网自动视为西班牙本地销售，不把公司入口自动视为品牌代理，不把全球高管写成西班牙销售 KP，也不把目标账户或区域池写成既有客户。公开姓名仅在来源能直接支持当前职业信息时显示；联系方式仅保留公开业务入口。</div></section>
+    <section class="hero"><div class="eyebrow">Spain · strict verified workbook · 2026-08-11</div><h1>西班牙：竞品、产品、渠道、目标账户与 KP</h1><p>按“竞品公司—产品/技术路线—西班牙销售入口或候选渠道—城市/覆盖范围—公开职业 KP”整理。每个字段均保留证据边界：本地官方站或公司入口可证明其存在；授权、产品线、具体城市覆盖和采购关系未被直接证明时，明确标记为待核验。</p></section>
 
     <section class="kpis"><div class="kpi"><b>€1,687.2B</b><span>2025 名义 GDP（Eurostat）</span></div><div class="kpi"><b>49.13M</b><span>2025 人口（INE）</span></div><div class="kpi"><b id="competitorCount">0</b><span>竞品公司 / 节点</span></div><div class="kpi"><b id="channelCount">0</b><span>渠道、伙伴与目标账户条目</span></div></section>
 
-    <section class="section"><div class="section-head"><div><h2>重点区域与切入顺序</h2><p>区域排序是内部进入优先级假设，不是官方市场规模排名。首批区域应先由渠道访谈、公开项目与实际 PoC 验证。</p></div></div><div class="region-grid" id="regions"></div></section>
+    <section class="section" id="market"><div class="section-head"><div><h2>重点区域与切入顺序</h2><p>区域排序是内部进入优先级假设，不是官方市场规模排名。首批区域应先由渠道访谈、公开项目与实际 PoC 验证。</p></div></div><div class="region-grid" id="regions"></div></section>
 
-    <section class="section" id="competitors"><div class="section-head"><div><h2>竞品、产品与西班牙销售入口</h2><p>一行只陈述来源直接支持的关系。对于没有西班牙本地实体、经销商或产品线证据的欧洲入口，状态为“西班牙范围待确认”，不作为本地代理商信息使用。</p></div></div><div class="filters"><div class="field"><label for="brandFilter">竞品公司</label><select id="brandFilter"><option value="">全部竞品</option></select></div><div class="field"><label for="techFilter">技术路线</label><select id="techFilter"><option value="">全部技术路线</option></select></div><div class="field"><label for="compStatusFilter">证据状态</label><select id="compStatusFilter"><option value="">全部状态</option><option value="verified">西班牙官方/公司入口</option><option value="review">西班牙范围待确认</option><option value="target">本地公司节点/候选渠道</option></select></div><button class="reset" type="button" id="resetCompFilters">重置筛选</button></div><div class="brand-directory" id="brandDirectory" aria-label="按竞品快速筛选"></div><div class="summary" id="compSummary"></div><div class="table-box"><table class="data"><thead><tr><th>竞品公司</th><th>代表产品 / 技术路线</th><th>主要应用</th><th>西班牙销售入口 / 渠道模式</th><th>覆盖范围 / 证据边界</th><th>MRDVS 对标要点</th><th>状态</th><th>官方来源</th></tr></thead><tbody id="competitorRows"></tbody></table></div></section><section class="section relation-hidden" id="company-relations"><div class="section-head"><div><h2>公司关系视图</h2><p>选择竞品后显示：竞品 → 产品/技术 → 西班牙销售入口/渠道。独立渠道、目标账户与 KP 表继续保留，避免把无法可靠对应的记录强行挂接。</p></div></div><div id="relationDetail"></div></section>
+    <section class="section" id="records"><div class="section-head"><div><h2>竞品、产品与西班牙销售入口</h2><p>一行只陈述来源直接支持的关系。对于没有西班牙本地实体、经销商或产品线证据的欧洲入口，状态为“西班牙范围待确认”，不作为本地代理商信息使用。</p></div></div><div class="filters"><div class="field"><label for="brandFilter">竞品公司</label><select id="brandFilter"><option value="">全部竞品</option></select></div><div class="field"><label for="techFilter">技术路线</label><select id="techFilter"><option value="">全部技术路线</option></select></div><div class="field"><label for="compStatusFilter">证据状态</label><select id="compStatusFilter"><option value="">全部状态</option><option value="verified">西班牙官方/公司入口</option><option value="review">西班牙范围待确认</option><option value="target">本地公司节点/候选渠道</option></select></div><button class="reset" type="button" id="resetCompFilters">重置筛选</button></div><div class="brand-directory" id="brandDirectory" aria-label="按竞品快速筛选"></div><div class="summary" id="compSummary"></div><div class="table-box"><table class="data"><thead><tr><th>竞品公司</th><th>代表产品 / 技术路线</th><th>主要应用</th><th>西班牙销售入口 / 渠道模式</th><th>覆盖范围 / 证据边界</th><th>MRDVS 对标要点</th><th>状态</th><th>官方来源</th></tr></thead><tbody id="competitorRows"></tbody></table></div></section><section class="section relation-hidden" id="company-relations"><div class="section-head"><div><h2>公司关系视图</h2><p>选择竞品后显示：竞品 → 产品/技术 → 西班牙销售入口/渠道。独立渠道、目标账户与 KP 表继续保留，避免把无法可靠对应的记录强行挂接。</p></div></div><div id="relationDetail"></div></section>
 
     <section class="section" id="channels"><div class="section-head"><div><h2>渠道、SI、OEM 与目标账户清单</h2><p>本表完整导入工作簿“详细渠道库”的 34 条条目。渠道、OEM、终端账户和区域目标池属于不同实体类型；只有明确证实的公司存在性或官方入口被标为已核验，品牌授权和具体可售 SKU 需逐条确认。</p></div></div><div class="filters"><div class="field"><label for="channelTypeFilter">渠道分类</label><select id="channelTypeFilter"><option value="">全部分类</option></select></div><div class="field"><label for="areaFilter">区域 / 城市</label><select id="areaFilter"><option value="">全部区域</option></select></div><div class="field"><label for="channelStatusFilter">关系状态</label><select id="channelStatusFilter"><option value="">全部状态</option><option value="verified">官方/公司入口已核验</option><option value="review">公司入口待确认</option><option value="target">目标线索/区域池</option></select></div><button class="reset" type="button" id="resetChannelFilters">重置筛选</button></div><div class="summary" id="channelSummary"></div><div class="status-note">“区域目标池”“项目生态”“线上路径”不是公司级经销商或客户。它们保留用于后续检索、访谈和项目资格核验，不能作为代理、交易或采购事实。</div><div class="table-box"><table class="data"><thead><tr><th>公司 / 节点</th><th>分类与城市</th><th>业务或角色</th><th>产品 / 场景与下一步</th><th>目标职能</th><th>证据状态</th><th>公开联系入口</th></tr></thead><tbody id="channelRows"></tbody></table></div></section>
 
@@ -190,5 +194,115 @@ function relEsc(v){return String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':
 function relLink(u,l){return u?`<a href="${relEsc(u)}" target="_blank" rel="noreferrer">${l}</a>`:''}
 function renderRelationDetail(b){const d=companyRelationDetails[b],h=document.getElementById('relationDetail');if(!d||!h)return;h.innerHTML=`<div class="relation-shell"><div class="relation-grid"><div><h3>01 竞品</h3><div class="relation-node brand-node"><b>${relEsc(d.brand.brand)}</b><span>${relEsc(d.brand.origin)}</span><small>${relEsc(d.brand.position)}</small></div></div><div><h3>02 产品 / 技术 / 应用</h3>${d.products.map(p=>`<div class="relation-node product-node"><b>${relEsc(p.name)}</b><span>${relEsc(p.tech)}</span><small>${relEsc(p.apps)}</small>${p.url?relLink(p.url,'官方来源'):''}</div>`).join('')}</div><div><h3>03 西班牙销售入口 / 渠道</h3>${d.channels.map(c=>`<div class="relation-node channel-node"><b>${relEsc(c.name)}</b><small>${relEsc(c.scope)}</small><span>${relEsc(c.status)}</span>${c.url?relLink(c.url,'来源'):''}</div>`).join('')}</div></div><div class="country-note"><b>西班牙特有信息：</b>下方独立渠道/目标账户与 KP 总表完整保留；只有竞品表自身明确支持的销售入口进入关系图。</div></div>`;}
 (function(){const f=document.getElementById('brandFilter'),s=document.getElementById('company-relations');function sync(){if(!f.value||!companyRelationDetails[f.value]){s.classList.add('relation-hidden');document.getElementById('relationDetail').innerHTML='';return;}s.classList.remove('relation-hidden');renderRelationDetail(f.value);}f.addEventListener('change',()=>{sync();if(f.value)requestAnimationFrame(()=>s.scrollIntoView({behavior:'smooth',block:'start'}));});document.getElementById('brandDirectory')?.addEventListener('click',()=>requestAnimationFrame(()=>{sync();if(f.value)s.scrollIntoView({behavior:'smooth',block:'start'});}));document.getElementById('resetCompFilters')?.addEventListener('click',()=>requestAnimationFrame(sync));sync();})();</script>
+  <script>
+  /* Render the Spain data with the same hierarchy and interaction model as Germany. */
+  (()=>{
+    const $=selector=>document.querySelector(selector);
+    const escapeHtml=value=>String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+    const link=(url,label)=>url?`<a href="${escapeHtml(url)}" target="_blank" rel="noreferrer">${label}</a>`:'—';
+    const badgeFor=status=>({direct:'<span class="badge direct">品牌直销 / 官方入口</span>',verified:'<span class="badge verified">公开资料已核验</span>',review:'<span class="badge review">待复核 / 候选线索</span>'}[status]||'<span class="badge review">待复核 / 候选线索</span>');
+    const key=value=>String(value??'').toLowerCase().replace(/[\s\-_/+.，、()（）]/g,'');
+    const relatedKps=company=>{
+      const companyKey=key(company);
+      return kps.filter(item=>{
+        const kpKey=key(item.company);
+        return companyKey.includes(kpKey)||kpKey.includes(companyKey)||[...new Set(String(company).split(/[ /｜]+/).map(key).filter(token=>token.length>2))].some(token=>kpKey.includes(token));
+      });
+    };
+    const selectOptions=(node,values)=>{node.insertAdjacentHTML('beforeend',values.map(value=>`<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`).join(''))};
+    const distinct=(rows,field)=>[...new Set(rows.map(row=>row[field]).filter(Boolean))].sort((a,b)=>String(a).localeCompare(String(b),'zh-CN'));
+    const statusFromSource=status=>status==='verified'?'direct':'review';
+    const typeFromCompetitor=row=>row.status==='target'?'C 本地公司节点 / 候选渠道':row.status==='verified'?'A 品牌直属销售 / 官方入口':'A 欧洲官方入口（西班牙范围待确认）';
+    const coverageFromCompetitor=row=>row.status==='verified'?'西班牙全国 / 官方入口':'欧洲入口 / 西班牙范围待确认';
+
+    $('.brand small').textContent='SPAIN CHANNEL RELATION MAP';
+    $('.top nav').innerHTML='<a href="index.html">欧洲总览</a><a href="#market">市场概览</a><a href="#records">关系记录</a>';
+    $('.breadcrumb').innerHTML='<a href="index.html">欧洲市场地图</a> / 西班牙 / 竞品—产品—城市渠道—KP';
+    $('.hero .eyebrow').textContent='Spain · imported source: 2026-08-11 workbook';
+    $('.hero h1').textContent='西班牙：竞品、产品、城市渠道与 KP';
+    $('.hero p').textContent='本页按工作簿的行级记录保留竞品、具体产品/系列、西班牙销售入口或候选渠道、城市/覆盖、公开联系信息、KP/目标职能及证据 URL。品牌直销、SI、OEM、终端账户与区域目标池分开呈现，不将公司存在、项目生态或欧洲入口误写为西班牙授权关系。';
+
+    const namedKpCount=kps.filter(item=>Boolean(item.name)).length;
+    $('.kpis').innerHTML=`<div class="kpi"><b>${competitors.length}</b><span>已导入竞品公司 / 节点</span></div><div class="kpi"><b>${channelRows.length}</b><span>公开渠道节点样本</span></div><div class="kpi"><b>${kps.length}</b><span>KP / 目标职能记录</span></div><div class="kpi"><b>${namedKpCount}</b><span>公开具名 KP</span></div>`;
+
+    const market=$('#market');
+    market.innerHTML=`<div class="section-head"><div><h2>西班牙市场与渠道结构</h2><p>宏观指标来自工作簿所列的 Eurostat 与 INE 公开数据；渠道数量为已导入的公开、高相关、可执行样本，不代表西班牙市场完整名录。</p></div></div><div class="metrics"><div class="metric"><b>€1,687.2B</b><span>2025 名义 GDP</span><small>Eurostat 现价口径</small></div><div class="metric"><b>49.13M</b><span>2025 人口</span><small>INE 年度人口口径</small></div><div class="metric"><b>${competitors.length}</b><span>竞品公司 / 节点</span><small>含本地公司与欧洲入口</small></div><div class="metric"><b>${channelRows.length}</b><span>渠道、SI、OEM 与目标账户</span><small>不同实体类型不互相替代</small></div><div class="metric"><b>${regions.length}</b><span>重点进入区域</span><small>${regions.map(region=>region.name).join('、')}</small></div></div>`;
+
+    const categorySection=document.createElement('section');
+    categorySection.className='section';
+    categorySection.id='spain-category-section';
+    market.insertAdjacentElement('afterend',categorySection);
+    const categoryCount=prefix=>channelRows.filter(row=>row.type.startsWith(prefix)).length;
+    const targetCount=channelRows.filter(row=>row.status==='target').length;
+    categorySection.innerHTML=`<div class="section-head"><div><h2>渠道类型与行动定位</h2><p>节点数按西班牙工作簿“详细渠道库”分类汇总。OEM、终端账户及目标池仅用于开发优先级与后续核验，不作为已授权经销商。</p></div></div><div class="metrics" id="spainCategoryMetrics"><div class="metric"><b>${categoryCount('A ')}</b><span>A 品牌直属 / 官方入口</span><small>核验产品、服务与本地销售边界；不默认开放代理。</small></div><div class="metric"><b>${categoryCount('D ')}</b><span>D SI / 项目生态</span><small>优先验证项目能力、行业案例与 PoC 机制。</small></div><div class="metric"><b>${categoryCount('E ')}</b><span>E OEM / 终端技术伙伴</span><small>从工程、产品与采购的项目需求切入。</small></div><div class="metric"><b>${categoryCount('F ')+categoryCount('G ')}</b><span>F/G 线上与技术生态</span><small>仅在 CE、库存、支持与 RMA 明确后推进。</small></div><div class="metric"><b>${targetCount}</b><span>待复核目标池 / 线索</span><small>需补全公司、品牌和项目关系后再触达。</small></div></div>`;
+
+    const records=$('#records');
+    records.classList.add('spain-records');
+    records.innerHTML=`<div class="section-head"><div><h2>竞品—产品—渠道—城市—KP 关系记录</h2><p>筛选后仅展示同时符合条件的关系。一个渠道可能对应多个品牌或产品；当前没有被公开资料直接支持的品牌—渠道关系，不自动合并或推断。</p></div></div><div class="filters"><div class="field"><label for="spainBrandFilter">竞品公司</label><select id="spainBrandFilter"><option value="">全部竞品</option></select></div><div class="field"><label for="spainTypeFilter">渠道类型</label><select id="spainTypeFilter"><option value="">全部渠道类型</option></select></div><div class="field"><label for="spainCityFilter">城市 / 覆盖</label><select id="spainCityFilter"><option value="">全部城市与覆盖</option></select></div><div class="field"><label for="spainStatusFilter">关系状态</label><select id="spainStatusFilter"><option value="">全部状态</option><option value="verified">公开资料已核验</option><option value="direct">品牌直销 / 官方入口</option><option value="review">待复核 / 历史线索</option></select></div><button class="reset" type="button" id="spainResetFilters">重置筛选</button></div><div class="brand-directory" id="spainBrandDirectory" aria-label="按竞品快速筛选"></div><div class="summary" id="spainSummary"></div><div class="status-note">联系人仅使用工作簿中保留的公开公司入口及公开具名职业信息。候选渠道、OEM、终端账户与区域目标池不因同属西班牙而自动成为任何竞品的代理商或客户。</div><div class="table-box"><table class="data"><thead><tr><th>竞品公司</th><th>具体产品 / 系列与应用</th><th>销售渠道</th><th>城市 / 覆盖</th><th>KP 与职责边界</th><th>公开联系方式</th><th>关系状态与服务能力</th><th>公开证据与使用边界</th></tr></thead><tbody id="spainRelationshipRows"></tbody></table></div>`;
+
+    const competitorRecords=competitors.map(row=>({
+      source:'competitor',brand:row.brand,origin:row.origin,product:row.product,tech:row.tech,applications:row.applications,
+      channel:row.channel,channelType:typeFromCompetitor(row),coverage:coverageFromCompetitor(row),kp:relatedKps(row.brand),
+      contactUrl:row.url,status:statusFromSource(row.status),statusText:row.position,evidence:row.scope
+    }));
+    const candidateRecords=channelRows.map(row=>({
+      source:'candidate',brand:'候选渠道 / SI / OEM / 目标账户',origin:'西班牙工作簿渠道库',product:'未与竞品产品线自动挂接',tech:row.role,applications:row.next,
+      channel:row.company,channelType:row.type,coverage:`${row.city||'城市未公开'}\n覆盖：${row.area||'待确认'}`,kp:relatedKps(row.company),
+      contactUrl:row.url,status:row.status==='verified'?'verified':'review',statusText:row.status==='verified'?'公开公司/官方入口已核验；具体品牌、SKU 与项目关系需逐条确认':row.next,
+      evidence:'公开公司入口或研究路径已保留；未将该节点自动挂接到任何竞品品牌。'
+    }));
+    const relationshipRecords=[...competitorRecords,...candidateRecords];
+    const brandFilter=$('#spainBrandFilter'),typeFilter=$('#spainTypeFilter'),cityFilter=$('#spainCityFilter'),statusFilter=$('#spainStatusFilter'),directory=$('#spainBrandDirectory');
+    selectOptions(brandFilter,distinct(competitorRecords,'brand'));
+    selectOptions(typeFilter,distinct(relationshipRecords,'channelType'));
+    selectOptions(cityFilter,distinct(relationshipRecords,'coverage'));
+    directory.innerHTML=competitors.map(row=>`<button class="brand-jump" type="button" data-spain-brand="${escapeHtml(row.brand)}">${escapeHtml(row.brand)}<br><span class="sub">${escapeHtml(row.origin)} · ${escapeHtml(row.tech)}</span></button>`).join('');
+
+    const renderKpCell=items=>items.length?items.slice(0,3).map(item=>`<span class="kp-name">${escapeHtml(item.name||'姓名未公开（目标职能）')}</span><br><span class="sub">${escapeHtml(item.title)}<br>${escapeHtml(item.boundary)}</span>`).join('<hr style="border:0;border-top:1px solid #e6edf5;margin:7px 0">'):'<span class="sub">未找到可与该渠道节点直接对应的公开 KP；请使用公司公开入口。</span>';
+    function renderRelationshipRecords(){
+      const rows=relationshipRecords.filter(row=>(!brandFilter.value||row.brand===brandFilter.value)&&(!typeFilter.value||row.channelType===typeFilter.value)&&(!cityFilter.value||row.coverage===cityFilter.value)&&(!statusFilter.value||row.status===statusFilter.value));
+      $('#spainSummary').innerHTML=`<span class="badge direct">${rows.length} 条关系记录</span><span>其中 ${rows.filter(row=>row.source==='competitor').length} 条为竞品—产品—入口记录，${rows.filter(row=>row.source==='candidate').length} 条为未自动挂接品牌的候选渠道、SI、OEM 或目标账户。</span>`;
+      $('#spainRelationshipRows').innerHTML=rows.length?rows.map(row=>`<tr><td><span class="entity">${escapeHtml(row.brand)}</span><br><span class="sub">${escapeHtml(row.origin)}</span></td><td><span class="product">${escapeHtml(row.product)}</span><br><span class="sub">${escapeHtml(row.tech)}<br>${escapeHtml(row.applications)}</span></td><td><span class="entity">${escapeHtml(row.channel)}</span><br><span class="sub">${escapeHtml(row.channelType)}</span></td><td><span class="city-chip">${escapeHtml(row.coverage)}</span></td><td>${renderKpCell(row.kp)}</td><td><div class="links">${link(row.contactUrl,'公开业务入口')}</div></td><td>${badgeFor(row.status)}<br><span class="sub">${escapeHtml(row.statusText)}</span></td><td><span class="sub">${escapeHtml(row.evidence)}</span><div class="links">${link(row.contactUrl,'公开证据')}</div></td></tr>`).join(''):'<tr><td colspan="8" class="empty">没有符合筛选条件的关系记录。</td></tr>';
+      directory.querySelectorAll('.brand-jump').forEach(button=>button.classList.toggle('active',button.dataset.spainBrand===brandFilter.value));
+    }
+
+    [typeFilter,cityFilter,statusFilter].forEach(node=>node.addEventListener('change',()=>{renderRelationshipRecords();renderCompanyRelation()}));
+    brandFilter.addEventListener('change',()=>{renderRelationshipRecords();renderCompanyRelation();if(brandFilter.value)requestAnimationFrame(()=>relations.scrollIntoView({behavior:'smooth',block:'start'}))});
+    $('#spainResetFilters').addEventListener('click',()=>{brandFilter.value='';typeFilter.value='';cityFilter.value='';statusFilter.value='';renderRelationshipRecords();renderCompanyRelation()});
+    directory.addEventListener('click',event=>{const button=event.target.closest('[data-spain-brand]');if(!button)return;brandFilter.value=button.dataset.spainBrand;renderRelationshipRecords();renderCompanyRelation();requestAnimationFrame(()=>$('#company-relations').scrollIntoView({behavior:'smooth',block:'start'}))});
+
+    const relations=$('#company-relations');
+    relations.innerHTML=`<div class="section-head"><div><h2>公司多对多关系视图</h2><p>在上方“竞品公司”选择某家公司后自动显示：竞品 → 产品/产品线 → 西班牙销售/经销渠道 → KP；“全部竞品”时隐藏。产品 × 渠道矩阵用于区分该渠道实际覆盖的产品范围。</p></div></div><div id="spainRelationDetail"></div>`;
+    relations.classList.add('relation-hidden');
+    function relationChannelsFor(row){
+      const local=channelRows.filter(channel=>{const a=key(channel.company),b=key(row.brand),tokens=String(row.brand).split(/\s+/).map(key).filter(token=>token.length>2);return a.includes(b)||b.includes(a)||tokens.some(token=>a.includes(token)||token.includes(a))});
+      return local.length?local.map(channel=>({name:channel.company,type:channel.type,location:`${channel.city||'城市未公开'}\n覆盖：${channel.area||'待确认'}`,products:channel.role,service:channel.next,url:channel.url,status:channel.status==='verified'?'verified':'review'})):[{name:row.channel,type:typeFromCompetitor(row),location:row.evidence,products:row.product,service:row.statusText,url:row.contactUrl,status:row.status}];
+    }
+    function renderCompanyRelation(){
+      const brand=brandFilter.value,detail=$('#spainRelationDetail');
+      const row=competitorRecords.find(item=>item.brand===brand);
+      if(!row){relations.classList.add('relation-hidden');detail.innerHTML='';return}
+      const channels=relationChannelsFor(row);
+      relations.classList.remove('relation-hidden');
+      detail.innerHTML=`<div class="relation-shell"><div class="relation-meta"><span class="badge direct">${escapeHtml(row.brand)}</span>${badgeFor(row.status)}${link(row.contactUrl,'产品 / 品牌证据')}</div><div class="relation-grid"><div class="relation-col"><h3>01 竞品</h3><div class="relation-node brand-node"><b>${escapeHtml(row.brand)}</b><span>${escapeHtml(row.origin)}</span><small>${escapeHtml(row.statusText)}</small></div></div><div class="relation-col"><h3>02 产品 / 产品线</h3><div class="relation-node product-node"><b>${escapeHtml(row.product)}</b><span>${escapeHtml(row.tech)}</span><small>${escapeHtml(row.applications)}</small><div class="links">${link(row.contactUrl,'产品证据')}</div></div></div><div class="relation-col"><h3>03 西班牙销售 / 经销渠道 → 对应 KP</h3>${channels.map(channel=>{const contacts=relatedKps(channel.name);return `<div class="relation-node channel-node"><b>${escapeHtml(channel.name)}</b><span>${escapeHtml(channel.type)}</span><small>${escapeHtml(channel.location)}</small><small><b style="display:inline">覆盖产品：</b>${escapeHtml(channel.products)}</small><small><b style="display:inline">服务 / 下一步：</b>${escapeHtml(channel.service)}</small><div class="links">${link(channel.url,'渠道证据')}</div><div class="channel-kps"><div class="channel-kps-title">对应 KP</div>${contacts.length?contacts.slice(0,3).map(contact=>`<div class="channel-kp"><b>${escapeHtml(contact.name||'姓名未公开（目标职能）')}</b><span>${escapeHtml(contact.title)}</span><small>${escapeHtml(contact.boundary)}</small><div class="links">${link(contact.url,'公开来源')}</div></div>`).join(''):'<div class="channel-no-kp">该渠道源记录未提供可单独挂接的公开 KP；请使用上方公开业务入口。</div>'}</div></div>`}).join('')}</div></div><div class="relation-matrix"><h3>产品 × 渠道关系矩阵</h3><div class="table-box"><table><thead><tr><th>产品 / 产品线</th>${channels.map(channel=>`<th>${escapeHtml(channel.name)}</th>`).join('')}</tr></thead><tbody><tr><th>${escapeHtml(row.product)}</th>${channels.map(channel=>`<td><span class="${channel.status==='verified'?'rel-yes':'rel-scope'}">${channel.status==='verified'?'✓ 公开入口已核验':'△ 西班牙范围待复核'}</span><div>${escapeHtml(channel.products)}</div></td>`).join('')}</tr></tbody></table></div></div></div>`;
+      enableDrag(detail.querySelector('.table-box'));
+    }
+
+    function enableDrag(tableBox){
+      if(!tableBox)return;
+      let startX=0,startY=0,startScroll=0,startPageY=0,moved=false,suppressClick=false;
+      tableBox.addEventListener('pointerdown',event=>{if(event.button!==0||event.target.closest('a,button,select,input,textarea,label'))return;startX=event.clientX;startY=event.clientY;startScroll=tableBox.scrollLeft;startPageY=window.scrollY;moved=false;tableBox.setPointerCapture(event.pointerId)});
+      tableBox.addEventListener('pointermove',event=>{if(!tableBox.hasPointerCapture(event.pointerId))return;const dx=event.clientX-startX,dy=event.clientY-startY;if(Math.hypot(dx,dy)<4)return;moved=true;tableBox.classList.add('is-dragging');tableBox.scrollLeft=startScroll-dx;window.scrollTo(0,startPageY-dy)});
+      const endDrag=event=>{if(!tableBox.hasPointerCapture(event.pointerId))return;tableBox.releasePointerCapture(event.pointerId);tableBox.classList.remove('is-dragging');suppressClick=moved;setTimeout(()=>{suppressClick=false},0)};
+      tableBox.addEventListener('pointerup',endDrag);tableBox.addEventListener('pointercancel',endDrag);tableBox.addEventListener('click',event=>{if(!suppressClick)return;event.preventDefault();event.stopPropagation()},true);
+    }
+    enableDrag(records.querySelector('.table-box'));
+
+    ['#channels','#kps'].forEach(selector=>{const section=$(selector);section.classList.add('legacy-source');section.setAttribute('aria-hidden','true')});
+    const sourceBox=$('.sources');
+    if(sourceBox)sourceBox.innerHTML='<b>来源与使用边界</b><ul><li>原始工作簿：<code>MRDVS_Spain_Market_Analysis_Strict_Verified_2026-08-11.xlsx</code>；本页使用“01_市场情况”“02_竞品地图”“03_渠道分类”“04_详细渠道库”“05_渠道客户线索”“06_KP联系表”。</li><li>页面按 A 品牌直属/官方入口、D 系统集成/项目生态、E OEM/终端技术伙伴、F/G 线上/技术生态与待复核目标池分开呈现；不将实体办公点、项目生态或区域池自动视为独立经销商。</li><li>行内 URL 为工作簿保留的公开证据入口。人员、产品、合作与库存会变化；正式外联、报价或合作判断前应按最新官网逐条二次核验。</li><li>宏观指标、公开入口与公司存在性不证明采购、授权、具体 SKU 或城市库存事实。不得推断私人电话、私人邮箱或未公开个人信息。</li></ul>';
+    renderRelationshipRecords();
+  })();
+  </script>
 </body>
 </html>
