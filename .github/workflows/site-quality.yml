@@ -1,0 +1,17 @@
+name: Website quality check
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Read repository files
+        uses: actions/checkout@v4
+      - name: Check page structure and local links
+        shell: pwsh
+        run: ./tools/validate-site.ps1

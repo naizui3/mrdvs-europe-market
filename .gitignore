@@ -1,0 +1,12 @@
+# Internal research and personal contact data must not enter the public repository.
+private/
+data/private/
+
+# Local secrets and editor files.
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+*.tmp
+~$*
