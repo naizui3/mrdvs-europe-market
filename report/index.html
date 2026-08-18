@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MRDVS迈尔微视欧洲市场、竞品、渠道与客户/KP项目总汇报。">
+  <title>MRDVS｜欧洲市场与渠道进入项目汇报</title>
+  <style>
+    :root {
+      --navy: #272936;
+      --navy-2: #173c4b;
+      --blue: #0070ad;
+      --cyan: #12abdb;
+      --teal: #00bfa5;
+      --ink: #181a20;
+      --muted: #63717c;
+      --line: #dce4e8;
+      --paper: #ffffff;
+      --soft: #f3f5f6;
+      --warm: #ff9e2c;
+      --danger: #bc1233;
+      --shadow: 0 24px 70px rgb(14 32 48 / 22%);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      overflow: hidden;
+      color: var(--ink);
+      background: #eaf0f3;
+      font-family: "Segoe UI", "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+    }
+    button, a { font: inherit; }
+    a { color: inherit; }
+
+    .toolbar {
+      position: fixed;
+      z-index: 100;
+      inset: 0 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      height: 62px;
+      padding: 0 20px;
+      color: #fff;
+      background: rgb(25 29 42 / 96%);
+      border-bottom: 1px solid rgb(255 255 255 / 12%);
+      backdrop-filter: blur(18px);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      min-width: 0;
+      margin-right: auto;
+      text-decoration: none;
+    }
+    .brand-mark {
+      width: 34px;
+      height: 26px;
+      border-radius: 60% 45% 58% 42%;
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      transform: rotate(-18deg);
+    }
+    .brand strong { display: block; font-size: 14px; letter-spacing: .03em; }
+    .brand span { display: block; overflow: hidden; color: #aebbc5; font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
+    .toolbar-actions { display: flex; gap: 8px; }
+    .tool-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 36px;
+      padding: 0 13px;
+      color: #fff;
+      text-decoration: none;
+      background: rgb(255 255 255 / 8%);
+      border: 1px solid rgb(255 255 255 / 14%);
+      border-radius: 7px;
+      cursor: pointer;
+    }
+    .tool-button:hover { background: rgb(255 255 255 / 16%); }
+    .tool-button.primary { color: #041c29; font-weight: 700; background: var(--cyan); border-color: var(--cyan); }
+
+    .stage {
+      position: fixed;
+      inset: 62px 0 44px;
+      display: grid;
+      place-items: center;
+      padding: 18px;
+    }
+    .deck {
+      position: relative;
+      width: min(1280px, calc((100vh - 142px) * 16 / 9), calc(100vw - 36px));
+      aspect-ratio: 16 / 9;
+      box-shadow: var(--shadow);
+      background: #fff;
+    }
+    .slide {
+      position: absolute;
+      inset: 0;
+      display: none;
+      overflow: hidden;
+      background: var(--paper);
+    }
+    .slide.active { display: block; animation: slideIn .22s ease-out; }
+    @keyframes slideIn { from { opacity: .35; transform: translateX(12px); } to { opacity: 1; transform: none; } }
+    .slide-inner {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      padding: 5.6% 4.8% 4.2%;
+    }
+    .slide.dark { color: #fff; background: var(--navy); }
+    .slide.gradient { color: #fff; background: linear-gradient(115deg, #223244 0%, #006692 100%); }
+    .slide h1, .slide h2, .slide h3, .slide p { margin-top: 0; }
+    .slide h1 { margin-bottom: 18px; font-size: clamp(28px, 4.2vw, 58px); font-weight: 400; line-height: 1.08; }
+    .slide h2 { margin-bottom: 16px; font-size: clamp(22px, 2.55vw, 38px); font-weight: 450; line-height: 1.16; }
+    .slide h3 { margin-bottom: 10px; font-size: clamp(15px, 1.4vw, 22px); }
+    .slide p, .slide li { font-size: clamp(12px, 1.18vw, 18px); line-height: 1.52; }
+    .slide ul { margin: 0; padding-left: 1.2em; }
+    .eyebrow { margin-bottom: 11px; color: var(--cyan); font-size: clamp(11px, 1vw, 15px); font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .subtitle { color: var(--muted); font-size: clamp(12px, 1.2vw, 18px); }
+    .dark .subtitle, .gradient .subtitle { color: #dbe6ec; }
+    .key { color: var(--cyan); }
+    .lead { max-width: 1080px; font-size: clamp(14px, 1.45vw, 22px) !important; }
+    .source {
+      position: absolute;
+      inset: auto 4.8% 2.3%;
+      color: #7b8790;
+      font-size: clamp(8px, .72vw, 11px);
+    }
+    .dark .source, .gradient .source { color: #bbc8d0; }
+    .slide-number { position: absolute; right: 3.2%; bottom: 2.3%; color: #8d98a0; font-size: 10px; }
+
+    .curve {
+      position: absolute;
+      z-index: 1;
+      right: -5%;
+      bottom: -28%;
+      width: 58%;
+      height: 66%;
+      border: clamp(2px, .35vw, 5px) solid var(--cyan);
+      border-left-color: transparent;
+      border-radius: 46% 54% 48% 52%;
+      transform: rotate(17deg);
+      opacity: .9;
+    }
+    .curve::after {
+      content: "";
+      position: absolute;
+      inset: 9% 7%;
+      border: 2px solid rgb(255 255 255 / 26%);
+      border-right-color: transparent;
+      border-radius: inherit;
+    }
+
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 15px; }
+    .card {
+      padding: clamp(16px, 2.2vw, 30px);
+      background: var(--soft);
+      border-top: 7px solid var(--blue);
+    }
+    .card.teal { border-color: var(--teal); }
+    .card.navy { border-color: var(--navy-2); }
+    .card.cyan { border-color: var(--cyan); }
+    .card .tag { display: inline-block; margin-bottom: 8px; color: var(--blue); font-size: 13px; font-weight: 800; }
+    .callout {
+      padding: 15px 22px;
+      color: #fff;
+      font-weight: 700;
+      background: var(--navy);
+      border-left: 6px solid var(--cyan);
+    }
+    .metric-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 34px; }
+    .metric { padding: 24px; color: #fff; background: rgb(255 255 255 / 8%); border: 1px solid rgb(255 255 255 / 12%); }
+    .metric strong { display: block; font-size: clamp(30px, 4vw, 58px); font-weight: 500; }
+    .metric span { color: #c8d7de; font-size: clamp(12px, 1vw, 16px); }
+
+    .cover .slide-inner { display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: 10%; }
+    .cover h1 { max-width: 1040px; }
+    .signature { margin-top: 22px; font-family: "Segoe Script", cursive; font-size: clamp(20px, 2vw, 32px); }
+
+    .agenda { max-width: 840px; margin-top: 32px; }
+    .agenda-row { display: grid; grid-template-columns: 65px 1fr; align-items: center; gap: 16px; padding: 14px 0; border-top: 1px solid var(--cyan); }
+    .agenda-row b { color: var(--cyan); font-size: 24px; }
+    .agenda-row span { font-size: clamp(16px, 1.65vw, 25px); }
+
+    .summary-list { display: grid; gap: 14px; max-width: 1120px; margin-top: 26px; }
+    .summary-list p { margin: 0; padding-left: 16px; border-left: 4px solid var(--cyan); }
+
+    .formula { margin: 26px 0; padding: 20px 24px; font-size: clamp(17px, 2vw, 30px); background: #eaf7fb; border-left: 8px solid var(--cyan); }
+    .score-box { padding: 24px; background: var(--soft); }
+    .score-box strong { display: block; margin-bottom: 14px; font-size: 22px; }
+
+    .product-layout { display: grid; grid-template-columns: 43% 57%; height: 100%; }
+    .product-copy { position: relative; z-index: 2; padding: 8% 7%; color: #fff; background: var(--navy); }
+    .product-copy h2 { font-size: clamp(24px, 3.1vw, 47px); }
+    .product-visual { min-height: 100%; background: #eef3f6 center/cover no-repeat url("assets/mrdvs-v2-pro.png"); }
+    .product-copy .curve { right: -38%; bottom: -10%; width: 100%; height: 74%; pointer-events: none; }
+
+    .mega-stat { text-align: center; }
+    .mega-stat h1 { max-width: 1150px; font-size: clamp(42px, 6.6vw, 96px); font-weight: 700; }
+    .mega-stat p { font-size: clamp(17px, 1.8vw, 28px); }
+
+    .route-card { position: relative; margin-top: 48px; padding-top: 46px; text-align: center; }
+    .route-number {
+      position: absolute;
+      top: -42px;
+      left: 50%;
+      display: grid;
+      place-items: center;
+      width: 84px;
+      height: 84px;
+      color: #fff;
+      font-size: 27px;
+      background: var(--blue);
+      border-radius: 50%;
+      transform: translateX(-50%);
+    }
+
+    .bars { display: flex; align-items: end; gap: 14px; height: 260px; padding: 15px 10px 30px; border-bottom: 1px solid #aeb8bf; }
+    .bar-item { display: flex; flex: 1; flex-direction: column; justify-content: flex-end; height: 100%; text-align: center; }
+    .bar-item strong { margin-bottom: 6px; font-size: 12px; }
+    .bar { min-height: 3px; height: calc(var(--v) * 1%); background: var(--blue); }
+    .bar-item:nth-child(2) .bar { background: var(--cyan); }
+    .bar-item:nth-child(3) .bar { background: var(--warm); }
+    .bar-item:nth-child(4) .bar { background: #168d91; }
+    .bar-item:nth-child(5) .bar { background: #09b8bb; }
+    .bar-item span { margin-top: 7px; font-size: 11px; }
+
+    .donut-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 35px; align-items: center; margin-top: 55px; }
+    .donut-wrap { display: grid; place-items: center; gap: 16px; }
+    .donut {
+      position: relative;
+      display: grid;
+      place-items: center;
+      width: min(23vw, 245px);
+      aspect-ratio: 1;
+      background: conic-gradient(var(--donut-color, var(--blue)) calc(var(--p) * 1%), #dfe7eb 0);
+      border-radius: 50%;
+    }
+    .donut::before { content: ""; position: absolute; inset: 25%; background: #fff; border-radius: 50%; }
+    .donut strong { position: relative; z-index: 1; color: var(--donut-color, var(--blue)); font-size: clamp(23px, 3vw, 40px); }
+    .donut-wrap p { margin: 0; text-align: center; }
+    .threat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px 44px; margin-top: 26px; }
+    .threat { display: grid; grid-template-columns: 135px 1fr; align-items: center; gap: 24px; }
+    .threat .donut { width: 135px; }
+    .threat h3 { color: var(--blue); }
+
+    .gap-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 60px; align-items: center; margin-top: 60px; }
+    .gap-item { display: grid; grid-template-columns: 220px 1fr; align-items: center; gap: 28px; }
+    .gap-item .donut { width: 220px; }
+    .gap-item .big { margin: 0; color: var(--teal); font-size: 54px; }
+
+    .role-grid { display: grid; grid-template-columns: repeat(2, 1fr); margin-top: 22px; border: 1px solid #fff; }
+    .role { padding: 22px; text-align: center; background: var(--soft); border: 1px solid #fff; }
+    .role.dark-head h3 { margin: -22px -22px 18px; padding: 13px; color: #fff; background: var(--navy-2); }
+    .role.teal-head h3 { margin: -22px -22px 18px; padding: 13px; color: #fff; background: #348797; }
+
+    .process { position: relative; display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; margin-top: 42px; }
+    .process::before { content: ""; position: absolute; top: 29px; right: 3%; left: 3%; height: 3px; background: var(--navy); }
+    .process-step { position: relative; z-index: 1; text-align: center; }
+    .process-step b { display: grid; place-items: center; width: 58px; height: 58px; margin: 0 auto 12px; color: #fff; background: var(--teal); border-radius: 50%; }
+    .process-step:nth-child(n+5) b { background: var(--navy-2); }
+    .process-step p { min-height: 175px; margin: 0; padding: 12px 8px; font-size: clamp(9px, .9vw, 14px); background: var(--soft); }
+
+    .priority-list { display: grid; gap: 10px; margin-top: 24px; }
+    .priority { display: grid; grid-template-columns: 65px 1fr; min-height: 76px; background: var(--soft); }
+    .priority b { display: grid; place-items: center; color: #fff; font-size: 28px; background: var(--navy-2); }
+    .priority div { padding: 10px 18px; }
+    .priority h3, .priority p { margin: 0; }
+    .priority p { font-size: 14px; }
+
+    .timeline { margin-top: 24px; }
+    .weeks { display: grid; grid-template-columns: 180px repeat(12, 1fr); gap: 2px; }
+    .weeks span { padding: 6px 2px; color: #fff; text-align: center; background: var(--navy); }
+    .weeks span:first-child { color: transparent; background: transparent; }
+    .gantt-row { display: grid; grid-template-columns: 180px repeat(12, 1fr); min-height: 46px; border-bottom: 1px solid #fff; background: var(--soft); }
+    .gantt-row strong { padding: 13px 10px; color: #fff; background: var(--blue); }
+    .gantt-cell { position: relative; border-left: 1px solid #d9e0e4; }
+    .gantt-cell.active::after { content: ""; position: absolute; inset: 14px -1px; background: var(--cyan); }
+    .gantt-cell.teal::after { background: #168d91; }
+
+    .gate-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 35px; align-items: start; margin-top: 48px; text-align: center; }
+    .calendar { margin: 0 auto 18px; width: 145px; color: var(--blue); border: 5px solid var(--navy); }
+    .calendar b { display: block; padding: 8px; color: #fff; background: var(--navy); }
+    .calendar strong { display: block; padding: 13px; font-size: 55px; }
+    .gate p { font-size: 14px; }
+
+    .decision { display: flex; flex-direction: column; justify-content: center; max-width: 770px; height: 100%; }
+    .decision h1 { font-size: clamp(31px, 4vw, 58px); }
+    .decision ol { padding-left: 1.25em; }
+    .decision .success { margin-top: 22px; color: var(--cyan); font-size: clamp(18px, 1.8vw, 27px); font-weight: 700; }
+
+    .statusbar {
+      position: fixed;
+      z-index: 100;
+      inset: auto 0 0;
+      display: grid;
+      grid-template-columns: 105px 1fr 105px;
+      align-items: center;
+      height: 44px;
+      padding: 0 16px;
+      color: #677681;
+      background: #f7f9fa;
+      border-top: 1px solid #d9e2e7;
+    }
+    .statusbar button { color: #42515c; background: transparent; border: 0; cursor: pointer; }
+    .progress { height: 4px; overflow: hidden; background: #d9e2e7; border-radius: 999px; }
+    .progress span { display: block; width: 5%; height: 100%; background: linear-gradient(90deg, var(--blue), var(--cyan)); transition: width .22s ease; }
+    .counter { text-align: right; font-variant-numeric: tabular-nums; }
+
+    .overview .stage { overflow: auto; display: block; padding: 30px; }
+    .overview .deck { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 24px; width: auto; max-width: 1800px; height: auto; margin: auto; aspect-ratio: auto; box-shadow: none; background: transparent; }
+    .overview .slide { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; cursor: pointer; box-shadow: 0 12px 35px rgb(24 45 58 / 14%); }
+    .overview .slide-inner { transform-origin: top left; }
+    .overview .statusbar { display: none; }
+
+    @media (max-width: 760px) {
+      .toolbar { padding: 0 10px; }
+      .brand span, .tool-button.secondary { display: none; }
+      .tool-button { padding: 0 10px; }
+      .stage { padding: 0; }
+      .deck { width: 100vw; }
+      .slide p, .slide li { line-height: 1.34; }
+      .grid-3, .grid-4 { gap: 8px; }
+      .card { padding: 10px; }
+      .source { display: none; }
+    }
+
+    @media print {
+      @page { size: 13.333in 7.5in; margin: 0; }
+      body { overflow: visible; background: #fff; }
+      .toolbar, .statusbar { display: none !important; }
+      .stage { position: static; display: block; padding: 0; }
+      .deck { width: 13.333in; height: auto; box-shadow: none; }
+      .slide { position: relative; display: block !important; width: 13.333in; height: 7.5in; break-after: page; }
+    }
+  </style>
+</head>
+<body>
+  <header class="toolbar">
+    <a class="brand" href="../index.html" aria-label="返回欧洲市场与渠道地图">
+      <i class="brand-mark" aria-hidden="true"></i>
+      <span><strong>MRDVS 欧洲项目总汇报</strong><span>市场 · 竞品 · 渠道 · 客户/KP · 90天行动</span></span>
+    </a>
+    <nav class="toolbar-actions" aria-label="演示工具">
+      <button class="tool-button secondary" id="overviewButton" type="button">缩略图</button>
+      <button class="tool-button secondary" id="printButton" type="button">打印 / PDF</button>
+      <button class="tool-button secondary" id="fullButton" type="button">全屏</button>
+      <a class="tool-button primary" href="MRDVS_欧洲市场与渠道总项目汇报_2026-08.pptx" download>导出 PPTX</a>
+    </nav>
+  </header>
+
+  <main class="stage">
+    <div class="deck" id="deck" aria-live="polite">
+      <section class="slide gradient cover active" data-title="封面">
+        <div class="curve"></div>
+        <div class="slide-inner">
+          <p class="eyebrow">MRDVS · EUROPE MARKET ENTRY</p>
+          <h1>MRDVS欧洲市场与渠道进入项目汇报</h1>
+          <p class="lead">从研究资产走向渠道激活与PoC落地｜2026年8月</p>
+          <div class="signature">Capgemini format</div>
+        </div>
+        <span class="slide-number">01</span>
+      </section>
+
+      <section class="slide dark" data-title="议程">
+        <div class="curve"></div>
+        <div class="slide-inner">
+          <p class="eyebrow">AGENDA</p>
+          <h2>议程</h2>
+          <div class="agenda">
+            <div class="agenda-row"><b>01</b><span>欧洲市场机会与重点国家</span></div>
+            <div class="agenda-row"><b>02</b><span>竞品、渠道与客户/KP洞察</span></div>
+            <div class="agenda-row"><b>03</b><span>德国验证与90天行动</span></div>
+          </div>
+        </div>
+        <span class="slide-number">02</span>
+      </section>
+
+      <section class="slide" data-title="管理层结论">
+        <div class="slide-inner">
+          <p class="eyebrow">EXECUTIVE SUMMARY</p>
+          <h2>欧洲机会已经识别，下一阶段应从“继续找名单”切换到“激活渠道”</h2>
+          <div class="summary-list">
+            <p>德国、英国、法国构成第一波；意大利、西班牙、荷兰、波兰、瑞士为第二波。</p>
+            <p>以S10 Ultra长距dToF与V2 Pro导航模块切入AMR、物流和工业自动化，避免正面进入微米级抓取/检测红海。</p>
+            <p>渠道组合建议：<strong>1家主VAD + 1家SI/备选 + OEM直连</strong>，德国作为方法验证样板。</p>
+            <p>研究资产已形成，但确认KP、触达、会议、PoC仍为0——瓶颈已经转向商业激活。</p>
+          </div>
+          <div class="metric-row">
+            <div class="card"><span class="tag">第一波</span><strong>德国 · 英国 · 法国</strong></div>
+            <div class="card teal"><span class="tag">定位</span><strong>远距3D感知 + 导航</strong></div>
+            <div class="card navy"><span class="tag">下一步</span><strong>渠道激活 + PoC</strong></div>
+          </div>
+        </div>
+        <p class="source">来源：MRDVS工作台 00/04/05/07；德国深度附件｜2026-08-18</p><span class="slide-number">03</span>
+      </section>
+
+      <section class="slide" data-title="任务拆解">
+        <div class="slide-inner">
+          <p class="eyebrow">ORIGINAL SCOPE</p>
+          <h2>原始任务拆解与统一数据关系</h2>
+          <div class="grid-3">
+            <article class="card"><h3>1｜欧洲市场与竞品</h3><ul><li>15个GDP重点经济体 + 捷克战略补充</li><li>人口、GDP、自动化、渠道可达性</li><li>中国与海外视觉传感器竞品</li></ul></article>
+            <article class="card cyan"><h3>2｜重点国家渠道</h3><ul><li>竞品代理商与产品线关系</li><li>线上、线下与区域覆盖</li><li>VAD、专业分销、SI、OEM</li></ul></article>
+            <article class="card navy"><h3>3｜客户与KP挖掘</h3><ul><li>社媒、海关与搜索引擎证据</li><li>公司、部门、角色和公开职业联系</li><li>采购、产品经理、老板等关键人</li></ul></article>
+          </div>
+          <p class="callout" style="margin-top:22px">统一主键：国家 → 竞品 → 产品线 → 渠道 → KP；一家公司可关联多个竞品与产品线，不重复建档。</p>
+        </div>
+        <p class="source">来源：用户原始任务拆解；MRDVS工作台 09_字典与参数</p><span class="slide-number">04</span>
+      </section>
+
+      <section class="slide" data-title="项目资产">
+        <div class="slide-inner">
+          <p class="eyebrow">PROJECT ASSETS</p>
+          <h2>项目资产已成型，但16国标准化仍未全部完成</h2>
+          <div class="grid-2" style="margin-top:28px">
+            <article class="card"><h3>总工作台</h3><p>10张主表，覆盖优先级、22家竞品、渠道分类、国家概览、KP、产品对标与行动计划。</p></article>
+            <article class="card cyan"><h3>国家附件</h3><p>16国初始附件；德国另有102个渠道节点、127条KP记录的深度附件。</p></article>
+            <article class="card teal"><h3>网站</h3><p>16个国家页面、欧洲渠道地图和总览；网页18行竞品需同步工作台的22家口径。</p></article>
+            <article class="card navy"><h3>标准化进度</h3><p>德国已完成关系回填；其他15国仍需迁移到统一字段模板。</p></article>
+          </div>
+          <p class="callout" style="margin-top:20px">管理含义：研究框架可用，下一步重点是标准化、核验与触达，而不是继续堆叠文件。</p>
+        </div>
+        <p class="source">来源：MRDVS工作台 00/04；16国渠道附件；项目网站｜2026-08-18</p><span class="slide-number">05</span>
+      </section>
+
+      <section class="slide" data-title="评分模型">
+        <div class="slide-inner">
+          <p class="eyebrow">MARKET PRIORITIZATION</p>
+          <h2>市场优先级不是只看GDP，而是“规模 × 自动化 × 可达性”</h2>
+          <div class="grid-2">
+            <div>
+              <div class="formula">GDP 35% + 人口 10% + 自动化 35% + 渠道可达性 20%</div>
+              <p>研究池以欧洲GDP重点经济体为主，并加入捷克这一制造业战略补充，共16国。</p>
+              <p class="subtitle">模型用于决定研究和商业验证先后，不等同于公开机构的市场排名。</p>
+            </div>
+            <aside class="score-box"><strong>德国为何排第一</strong><ul><li>GDP约4.68万亿美元</li><li>机器人密度429台/万名制造业员工</li><li>首轮识别8个评分渠道</li><li>专业视觉分销与自动化生态成熟</li></ul><p><b>适合建立首个欧洲样板市场。</b></p></aside>
+          </div>
+        </div>
+        <p class="source">来源：World Bank 2024；IFR robot density 2023；MRDVS工作台 01/08/09</p><span class="slide-number">06</span>
+      </section>
+
+      <section class="slide dark" data-title="产品定位">
+        <div class="product-layout">
+          <div class="product-copy">
+            <div class="curve"></div>
+            <p class="eyebrow">POSITIONING</p>
+            <h2>MRDVS的欧洲切入点：远距离3D感知 + 导航模块化</h2>
+            <p><b>S10 Ultra</b>｜0.3–42m长距dToF，面向AMR、物流和工业空间感知。</p>
+            <p><b>V2 Pro</b>｜dToF + 270°激光雷达 + 边缘计算导航模块。</p>
+            <p class="subtitle">销售从“相机价格”升级为“更快落地的导航与空间感知能力”。</p>
+          </div>
+          <div class="product-visual" role="img" aria-label="MRDVS V2 Pro导航控制器及仓储应用"></div>
+        </div>
+        <p class="source">来源：MRDVS官网；迈尔微视产品合辑；MRDVS工作台 06</p><span class="slide-number">07</span>
+      </section>
+
+      <section class="slide dark mega-stat" data-title="研究资产规模">
+        <div class="curve"></div>
+        <div class="slide-inner" style="display:grid;place-items:center;text-align:center">
+          <div><h1>16国｜22竞品｜102节点</h1><p>市场范围、竞品全景与德国深挖已经完成，研究资产足够支撑渠道激活。</p></div>
+        </div>
+        <p class="source">口径：MRDVS工作台与德国深度附件｜2026-08-18</p><span class="slide-number">08</span>
+      </section>
+
+      <section class="slide" data-title="市场波次">
+        <div class="slide-inner">
+          <p class="eyebrow">MARKET WAVES</p>
+          <h2>第一波建立样板，第二波复制打法</h2>
+          <div class="grid-2" style="margin-top:32px">
+            <article class="card navy"><h3>第一波｜TIER 1</h3><p><b>德国 100</b><br>英国 77.8<br>法国 72.0</p><p>目标：验证定位、渠道组合与样机支持机制。</p></article>
+            <article class="card cyan"><h3>第二波｜TIER 2/3</h3><p><b>意大利 68.8</b><br>西班牙 58.0｜荷兰 50.6<br>波兰 49.4｜瑞士 48.7</p><p>目标：复制样板，并按本地语言与行业调整。</p></article>
+          </div>
+        </div>
+        <p class="source">来源：MRDVS工作台 01_国家优先级；分数为项目模型输出</p><span class="slide-number">09</span>
+      </section>
+
+      <section class="slide" data-title="三条销售通路">
+        <div class="slide-inner">
+          <p class="eyebrow">ROUTE TO MARKET</p>
+          <h2>建议用三条通路同时降低市场进入风险</h2>
+          <div class="grid-3">
+            <article class="card route-card"><span class="route-number">01</span><h3>主VAD</h3><p>泛欧洲或全国覆盖<br>Demo、样机与技术支持</p></article>
+            <article class="card cyan route-card"><span class="route-number" style="background:#16697a">02</span><h3>SI / 备选渠道</h3><p>本地项目转化<br>降低单一渠道依赖</p></article>
+            <article class="card navy route-card"><span class="route-number" style="background:#173c4b">03</span><h3>OEM直连</h3><p>AMR与机器人生态<br>设计导入与规模复制</p></article>
+          </div>
+        </div>
+        <p class="source">来源：MRDVS工作台 03_渠道分类；16国渠道附件</p><span class="slide-number">10</span>
+      </section>
+
+      <section class="slide" data-title="国家对比">
+        <div class="slide-inner">
+          <p class="eyebrow">COUNTRY COMPARISON</p>
+          <h2>德国在综合优先级、经济规模和自动化基础上形成领先</h2>
+          <div class="grid-3">
+            <div><h3>综合优先级｜分</h3><div class="bars"><div class="bar-item"><strong>100</strong><i class="bar" style="--v:100"></i><span>德国</span></div><div class="bar-item"><strong>77.8</strong><i class="bar" style="--v:78"></i><span>英国</span></div><div class="bar-item"><strong>72</strong><i class="bar" style="--v:72"></i><span>法国</span></div><div class="bar-item"><strong>68.8</strong><i class="bar" style="--v:69"></i><span>意大利</span></div></div></div>
+            <div><h3>GDP 2024｜十亿美元</h3><div class="bars"><div class="bar-item"><strong>4684</strong><i class="bar" style="--v:94"></i><span>德国</span></div><div class="bar-item"><strong>3695</strong><i class="bar" style="--v:74"></i><span>英国</span></div><div class="bar-item"><strong>3161</strong><i class="bar" style="--v:63"></i><span>法国</span></div><div class="bar-item"><strong>2383</strong><i class="bar" style="--v:48"></i><span>意大利</span></div><div class="bar-item"><strong>1725</strong><i class="bar" style="--v:35"></i><span>西班牙</span></div></div></div>
+            <div><h3>机器人密度｜台/万名员工</h3><div class="bars"><div class="bar-item"><strong>429</strong><i class="bar" style="--v:86"></i><span>德国</span></div><div class="bar-item"><strong>347</strong><i class="bar" style="--v:69"></i><span>瑞典</span></div><div class="bar-item"><strong>306</strong><i class="bar" style="--v:61"></i><span>丹麦</span></div><div class="bar-item"><strong>302</strong><i class="bar" style="--v:60"></i><span>瑞士</span></div></div></div>
+          </div>
+        </div>
+        <p class="source">来源：MRDVS工作台 01/08；World Bank 2024；IFR 2023/2025摘要</p><span class="slide-number">11</span>
+      </section>
+
+      <section class="slide" data-title="竞品结构">
+        <div class="slide-inner">
+          <p class="eyebrow">COMPETITOR LANDSCAPE</p>
+          <h2>22家厂商中，直接3D视觉对手与生态型巨头并存</h2>
+          <div class="donut-grid">
+            <div class="donut-wrap"><div class="donut" style="--p:55;--donut-color:#00689a"><strong>12/22</strong></div><p>直接3D视觉对手</p></div>
+            <div class="donut-wrap"><div class="donut" style="--p:14;--donut-color:#13a6c8"><strong>3/22</strong></div><p>中国厂商</p></div>
+            <div class="donut-wrap"><div class="donut" style="--p:27;--donut-color:#145766"><strong>6/22</strong></div><p>威胁评分 ≥ 4.5</p></div>
+          </div>
+        </div>
+        <p class="source">来源：MRDVS工作台 02_竞品全景；网页当前18行，采用更新后的22家工作台口径</p><span class="slide-number">12</span>
+      </section>
+
+      <section class="slide" data-title="高威胁竞品">
+        <div class="slide-inner">
+          <p class="eyebrow">TOP THREATS</p>
+          <h2>高威胁阵营：Orbbec、SICK、Mech-Mind、ifm领跑</h2>
+          <div class="threat-grid">
+            <div class="threat"><div class="donut" style="--p:98"><strong>4.9/5</strong></div><div><h3>Orbbec</h3><p>RGB-D产品广、开发者渠道强；需避免单纯价格比较。</p></div></div>
+            <div class="threat"><div class="donut" style="--p:96;--donut-color:#146176"><strong>4.8/5</strong></div><div><h3>Mech-Mind</h3><p>中国直接竞争者，3D机器人视觉方案和欧洲本地化较成熟。</p></div></div>
+            <div class="threat"><div class="donut" style="--p:96;--donut-color:#18a8d0"><strong>4.8/5</strong></div><div><h3>SICK</h3><p>工业装机基础和全渠道能力强，是德国首轮标杆。</p></div></div>
+            <div class="threat"><div class="donut" style="--p:94;--donut-color:#272936"><strong>4.7/5</strong></div><div><h3>ifm</h3><p>直销与分销并行；次高威胁包括HIKROBOT 4.6、Cognex 4.5。</p></div></div>
+          </div>
+        </div>
+        <p class="source">来源：MRDVS工作台 02/06；各品牌官方网站</p><span class="slide-number">13</span>
+      </section>
+
+      <section class="slide" data-title="研究转化差距">
+        <div class="slide-inner">
+          <p class="eyebrow">RESEARCH-TO-ACTION GAP</p>
+          <h2>研究资产丰富，但商业转化尚未启动</h2>
+          <div class="gap-grid">
+            <div class="gap-item"><div class="donut" style="--p:83;--donut-color:#00bfa5"><strong>83%</strong></div><div><p class="big">83%</p><h3>首轮渠道核验率</h3><p>16国首轮53条评分渠道中，44条已有可追溯证据。</p></div></div>
+            <div class="gap-item"><div class="donut" style="--p:0;--donut-color:#145766"><strong>0</strong></div><div><p class="big" style="color:#145766">0</p><h3>商业激活结果</h3><p>德国有127条KP记录，但确认KP、触达、会议和PoC仍为0。</p></div></div>
+          </div>
+        </div>
+        <p class="source">来源：MRDVS工作台 00/05；16国附件；德国深度附件</p><span class="slide-number">14</span>
+      </section>
+
+      <section class="slide" data-title="渠道角色">
+        <div class="slide-inner">
+          <p class="eyebrow">CHANNEL ARCHETYPES</p>
+          <h2>渠道选择应按“角色”管理，不按公司名单堆叠</h2>
+          <p class="callout" style="text-align:center">目标组合｜1家主VAD + 1家SI/备选 + OEM直连</p>
+          <div class="role-grid">
+            <article class="role teal-head"><h3>覆盖与支持层</h3><p><b>主VAD</b><br>泛欧洲/全国覆盖<br>样机、库存与技术支持</p></article>
+            <article class="role teal-head"><h3>本地专业层</h3><p><b>国家专业分销</b><br>机器视觉产品能力<br>本地语言与行业覆盖</p></article>
+            <article class="role dark-head"><h3>项目转化层</h3><p><b>SI / 解决方案伙伴</b><br>集成能力、现场交付<br>把传感器转为应用方案</p></article>
+            <article class="role dark-head"><h3>规模复制层</h3><p><b>OEM / 机器人生态</b><br>AMR、叉车、导航平台<br>设计导入后可规模复制</p></article>
+          </div>
+        </div>
+        <p class="source">来源：MRDVS工作台 03；德国及15国渠道附件</p><span class="slide-number">15</span>
+      </section>
+
+      <section class="slide" data-title="线索到PoC">
+        <div class="slide-inner">
+          <p class="eyebrow">LEAD-TO-POC</p>
+          <h2>从渠道线索到PoC，用统一阶段管理避免重复与失联</h2>
+          <p class="subtitle">国家 → 竞品产品线 → 渠道 → KP → 触达 → 技术会议 → PoC</p>
+          <div class="process">
+            <div class="process-step"><b>1</b><p><strong>核验公司</strong><br>覆盖国家与渠道角色</p></div>
+            <div class="process-step"><b>2</b><p><strong>映射竞品</strong><br>品牌、产品线与授权关系</p></div>
+            <div class="process-step"><b>3</b><p><strong>识别KP</strong><br>采购、产品、技术与老板</p></div>
+            <div class="process-step"><b>4</b><p><strong>证据与合规</strong><br>公开来源、置信度、更新时间</p></div>
+            <div class="process-step"><b>5</b><p><strong>个性化触达</strong><br>按应用和竞品关系设计话术</p></div>
+            <div class="process-step"><b>6</b><p><strong>技术发现</strong><br>Demo、样机与集成条件</p></div>
+            <div class="process-step"><b>7</b><p><strong>PoC与决策</strong><br>合作评分、主备渠道与退出条件</p></div>
+          </div>
+        </div>
+        <p class="source">来源：MRDVS工作台 09；公开职业联系信息需按GDPR等规则合规处理</p><span class="slide-number">16</span>
+      </section>
+
+      <section class="slide" data-title="90天重点">
+        <div class="slide-inner">
+          <p class="eyebrow">90-DAY PRIORITIES</p>
+          <h2>未来90天只做五件能改变结果的事</h2>
+          <div class="priority-list">
+            <div class="priority"><b>1</b><div><h3>锁定产品主张与合规清单</h3><p>明确S10 Ultra、V2 Pro的欧洲卖点与认证差距。</p></div></div>
+            <div class="priority"><b>2</b><div><h3>补齐英文销售与技术包</h3><p>网页、手册、SDK/ROS、案例与样机SLA统一口径。</p></div></div>
+            <div class="priority"><b>3</b><div><h3>激活第一波渠道</h3><p>德国先行，并同步启动英国和法国的主VAD/备选SI。</p></div></div>
+            <div class="priority"><b>4</b><div><h3>形成可复制的Demo机制</h3><p>渠道培训、远程支持、样机与备件流程标准化。</p></div></div>
+            <div class="priority"><b>5</b><div><h3>用PoC做Go / No-Go</h3><p>完成3个终端PoC并沉淀国家渠道评分卡。</p></div></div>
+          </div>
+        </div>
+        <p class="source">来源：MRDVS工作台 07_行动计划</p><span class="slide-number">17</span>
+      </section>
+
+      <section class="slide" data-title="90天路线图">
+        <div class="slide-inner">
+          <p class="eyebrow">EXECUTION ROADMAP</p>
+          <h2>90天执行路线图｜2026.08–10</h2>
+          <div class="timeline">
+            <div class="weeks"><span>.</span><span>W1</span><span>W2</span><span>W3</span><span>W4</span><span>W5</span><span>W6</span><span>W7</span><span>W8</span><span>W9</span><span>W10</span><span>W11</span><span>W12</span></div>
+            <div class="gantt-row"><strong>产品主张/合规</strong><i class="gantt-cell active"></i><i class="gantt-cell active"></i><i class="gantt-cell active"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i></div>
+            <div class="gantt-row"><strong>英文资料/SDK</strong><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell active"></i><i class="gantt-cell active"></i><i class="gantt-cell active"></i><i class="gantt-cell active"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i></div>
+            <div class="gantt-row"><strong>渠道触达</strong><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell active teal"></i><i class="gantt-cell active teal"></i><i class="gantt-cell active teal"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i></div>
+            <div class="gantt-row"><strong>Demo/样机/培训</strong><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell active"></i><i class="gantt-cell active"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i></div>
+            <div class="gantt-row"><strong>终端PoC</strong><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell active"></i><i class="gantt-cell active"></i><i class="gantt-cell active"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i></div>
+            <div class="gantt-row"><strong>定价与折扣</strong><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell active"></i><i class="gantt-cell active"></i><i class="gantt-cell"></i><i class="gantt-cell"></i></div>
+            <div class="gantt-row"><strong>复盘/Go-NoGo</strong><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell"></i><i class="gantt-cell active"></i><i class="gantt-cell active"></i></div>
+          </div>
+        </div>
+        <p class="source">来源：MRDVS工作台 07；本页为行动项的管理层聚合视图</p><span class="slide-number">18</span>
+      </section>
+
+      <section class="slide" data-title="阶段门槛">
+        <div class="slide-inner">
+          <p class="eyebrow">DECISION GATES</p>
+          <h2>四个阶段门槛把研究转化为可管理的商业验证</h2>
+          <div class="gate-grid">
+            <div class="gate"><div class="calendar"><b>AUG</b><strong>18</strong></div><h3>基线重置</h3><p>确认负责人、产品范围、德国样板市场与统一口径。</p></div>
+            <div class="gate"><div class="calendar"><b>SEP</b><strong>04</strong></div><h3>材料就绪</h3><p>合规、英文资料、SDK/ROS与样机SLA可用。</p></div>
+            <div class="gate"><div class="calendar"><b>SEP</b><strong>25</strong></div><h3>渠道证据</h3><p>20次触达，回复率≥30%，5场技术会议。</p></div>
+            <div class="gate"><div class="calendar"><b>OCT</b><strong>30</strong></div><h3>决策门</h3><p>3个PoC + 渠道评分卡 + Go / No-Go建议。</p></div>
+          </div>
+        </div>
+        <p class="source">来源：MRDVS工作台 07；回复率、会议与PoC数量为项目建议门槛</p><span class="slide-number">19</span>
+      </section>
+
+      <section class="slide gradient" data-title="管理层决策">
+        <div class="curve"></div>
+        <div class="slide-inner">
+          <div class="decision">
+            <p class="eyebrow">MANAGEMENT DECISION</p>
+            <h1>下一阶段管理层决策</h1>
+            <p class="lead"><strong>批准德国90天商业验证</strong></p>
+            <ol><li>指定欧洲渠道负责人</li><li>批准样机、认证和英文内容预算</li><li>以20次触达 / 5场会议 / 3个PoC为阶段门槛</li></ol>
+            <p class="success">成功标准：形成可复制的国家渠道组合</p>
+          </div>
+        </div>
+        <p class="source">来源：MRDVS工作台 00/07</p><span class="slide-number">20</span>
+      </section>
+    </div>
+  </main>
+
+  <footer class="statusbar">
+    <button id="prevButton" type="button" aria-label="上一页">← 上一页</button>
+    <div class="progress" aria-label="演示进度"><span id="progressFill"></span></div>
+    <div class="counter"><span id="currentNumber">01</span> / <span id="totalNumber">20</span></div>
+  </footer>
+
+  <script>
+    const slides = [...document.querySelectorAll('.slide')];
+    const progressFill = document.getElementById('progressFill');
+    const currentNumber = document.getElementById('currentNumber');
+    const totalNumber = document.getElementById('totalNumber');
+    const overviewButton = document.getElementById('overviewButton');
+    let index = Math.max(0, Math.min(slides.length - 1, Number(location.hash.slice(1)) - 1 || 0));
+    let touchStartX = 0;
+
+    totalNumber.textContent = String(slides.length).padStart(2, '0');
+
+    function show(nextIndex, updateHash = true) {
+      index = (nextIndex + slides.length) % slides.length;
+      slides.forEach((slide, slideIndex) => slide.classList.toggle('active', slideIndex === index));
+      currentNumber.textContent = String(index + 1).padStart(2, '0');
+      progressFill.style.width = `${((index + 1) / slides.length) * 100}%`;
+      document.title = `${String(index + 1).padStart(2, '0')}｜${slides[index].dataset.title}｜MRDVS欧洲项目`;
+      if (updateHash) history.replaceState(null, '', `#${index + 1}`);
+    }
+
+    function toggleOverview(force) {
+      const enabled = typeof force === 'boolean' ? force : !document.body.classList.contains('overview');
+      document.body.classList.toggle('overview', enabled);
+      overviewButton.textContent = enabled ? '返回演示' : '缩略图';
+    }
+
+    document.getElementById('prevButton').addEventListener('click', () => show(index - 1));
+    progressFill.parentElement.addEventListener('click', (event) => {
+      const ratio = event.offsetX / event.currentTarget.clientWidth;
+      show(Math.min(slides.length - 1, Math.floor(ratio * slides.length)));
+    });
+    overviewButton.addEventListener('click', () => toggleOverview());
+    document.getElementById('printButton').addEventListener('click', () => window.print());
+    document.getElementById('fullButton').addEventListener('click', async () => {
+      if (!document.fullscreenElement) await document.documentElement.requestFullscreen();
+      else await document.exitFullscreen();
+    });
+    slides.forEach((slide, slideIndex) => slide.addEventListener('click', () => {
+      if (document.body.classList.contains('overview')) { toggleOverview(false); show(slideIndex); }
+    }));
+    addEventListener('keydown', (event) => {
+      if (document.body.classList.contains('overview') && event.key === 'Escape') { toggleOverview(false); return; }
+      if (['ArrowRight', 'PageDown', ' '].includes(event.key)) { event.preventDefault(); show(index + 1); }
+      if (['ArrowLeft', 'PageUp'].includes(event.key)) { event.preventDefault(); show(index - 1); }
+      if (event.key === 'Home') show(0);
+      if (event.key === 'End') show(slides.length - 1);
+      if (event.key.toLowerCase() === 'o') toggleOverview();
+      if (event.key.toLowerCase() === 'f') document.getElementById('fullButton').click();
+    });
+    addEventListener('hashchange', () => show(Number(location.hash.slice(1)) - 1 || 0, false));
+    addEventListener('touchstart', (event) => { touchStartX = event.changedTouches[0].clientX; }, { passive: true });
+    addEventListener('touchend', (event) => {
+      const delta = event.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(delta) > 55) show(index + (delta < 0 ? 1 : -1));
+    }, { passive: true });
+    show(index, false);
+  </script>
+</body>
+</html>
