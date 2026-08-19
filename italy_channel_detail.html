@@ -65,5 +65,6 @@
     const counts=Object.fromEntries(['明星渠道','重点验证','谨慎对待','谨慎/不推进'].map(c=>[c,DATA.channelPriorities.filter(x=>x.category===c).length]));document.querySelector('#priorityCards').innerHTML=[['star','明星渠道',counts['明星渠道'],'优先进入商务与技术验证'],['focus','重点验证',counts['重点验证'],'补齐能力、边界和服务证据'],['caution','谨慎对待',counts['谨慎对待'],'受控接触并设置准入条件'],['stop','谨慎 / 不推进',counts['谨慎/不推进'],'竞品绑定或能力证据不足']].map(x=>`<div class="priority-card ${x[0]}"><b>${x[2]}</b><span>${x[1]}</span><small class="sub">${x[3]}</small></div>`).join('');['categoryFilter','minEngineering','minAcceptance'].forEach(id=>document.querySelector('#'+id).addEventListener('change',renderPriority));document.querySelector('#prioritySearch').addEventListener('input',renderPriority);document.querySelector('#resetPriority').addEventListener('click',()=>{document.querySelector('#categoryFilter').value='';document.querySelector('#minEngineering').value='0';document.querySelector('#minAcceptance').value='0';document.querySelector('#prioritySearch').value='';renderPriority()});
     brandFilter.value='';typeFilter.value='';cityFilter.value='';relationFilter.value='';renderRecords();syncRelation();renderPriority();
   </script>
+<script src="germany_style_unifier.js"></script>
 </body>
 </html>

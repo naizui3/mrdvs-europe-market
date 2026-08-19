@@ -74,4 +74,4 @@ dragTables();
  function sync(scroll=false){draw();let sec=document.getElementById('company-relations');if(!sel.value){sec.style.display='none';document.getElementById('relationDetail').innerHTML='';}else{sec.style.display='';renderRelationDetail(sel.value);if(scroll)requestAnimationFrame(()=>sec.scrollIntoView({behavior:'smooth',block:'start'}));}}
  sel.onchange=()=>sync(true);dir.onclick=e=>{let b=e.target.closest('.jump');if(!b)return;sel.value=b.dataset.brand;sync(true)};document.getElementById('compReset').onclick=()=>{sel.value='';sync(false)};sync(false);
 })();
-</script></body></html>
+</script><script src="germany_style_unifier.js"></script></body></html>
