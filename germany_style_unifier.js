@@ -94,6 +94,9 @@
     html.czech-germany-visual .brand { font-size: 17px; font-weight: 800; letter-spacing: normal; }
     html.czech-germany-visual .brand small { color: #9eddf3; font-size: 10px; font-weight: 600; letter-spacing: .7px; }
     html.czech-germany-visual .top nav { margin-left: auto; gap: 18px; }
+    html.czech-germany-visual a { color: #1769c2; text-decoration: none; }
+    html.czech-germany-visual a:hover { text-decoration: underline; }
+    html.czech-germany-visual .top a { color: #dceeff; }
     html.czech-germany-visual .top a { padding: 0; border-radius: 0; font-size: 13px; font-weight: 650; }
     html.czech-germany-visual .top a:hover { background: transparent; text-decoration: underline; }
     html.czech-germany-visual .wrap { padding: 0 0 38px; }
@@ -626,6 +629,14 @@
     ensureMarketBenchmarkSource();
   }
 
+  function removeSwissMarketResearchTable() {
+    if (countrySlug() !== 'switzerland') return;
+    const market = document.querySelector('#market');
+    if (!market) return;
+    market.querySelector('#marketTabs')?.remove();
+    market.querySelector(':scope > .table-box')?.remove();
+  }
+
   function addDerivedMarketMetric(metrics, value, label, note) {
     const card = document.createElement('article');
     card.className = 'metric germany-derived-market-metric';
@@ -885,6 +896,7 @@
       renderSummary();
       normaliseTopKpis();
       renderMarketBenchmark();
+      removeSwissMarketResearchTable();
       addChannelCategorySection();
       bindNavAnchors();
       bindDragBoxes();

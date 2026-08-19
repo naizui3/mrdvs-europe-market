@@ -35,4 +35,4 @@ fillSelect('brandFilter','brand');fillSelect('typeFilter','channelType');fillSel
 <script>
 (()=>{const selector='.relation-matrix,.relation-evidence,.channel-kp-map';const prune=root=>root.querySelectorAll(selector).forEach(node=>node.remove());const start=()=>{prune(document);const target=document.getElementById('relationDetail')||document.body;new MutationObserver(()=>prune(target)).observe(target,{childList:true,subtree:true})};document.readyState==='loading'?document.addEventListener('DOMContentLoaded',start,{once:true}):start()})();
 </script>
-<script src="germany_style_unifier.js"></script></body></html>
+<script src="germany_style_unifier.js?v=20260819-35640ee-r2"></script></body></html>
