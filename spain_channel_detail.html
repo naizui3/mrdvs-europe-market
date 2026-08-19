@@ -23,6 +23,21 @@
     #market,#records,#company-relations{scroll-margin-top:68px}
     .metrics{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}.metric{background:#fff;border:1px solid var(--line);border-top:3px solid var(--blue);padding:11px 12px}.metric b{display:block;font-size:20px;color:#143f70}.metric span{display:block;font-size:12px;font-weight:750;color:#334f70;margin-top:2px}.metric small{display:block;font-size:11px;color:var(--muted);margin-top:2px}.badge.direct{background:#e8f1ff;color:#165daa}.links{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px}.links a{font-size:11px;font-weight:700}.kp-name{font-weight:700}.relation-col h3{margin:0 0 8px;font-size:13px;color:#4c6581}.relation-node.kp-node{border-left:4px solid var(--amber)}.spain-records .filters{grid-template-columns:1fr 1fr 1fr 1fr auto}.spain-records .data{min-width:1740px}.spain-records .data td,.spain-records .city-chip{white-space:pre-line}.legacy-source{display:none!important}
     @media(max-width:1050px){.metrics{grid-template-columns:repeat(3,1fr)}}@media(max-width:620px){.metrics{grid-template-columns:1fr}}
+
+/* country-competitor-table-widths */
+.table-box{scrollbar-gutter:stable}
+table.data:has(thead th:nth-child(8)){width:100%;min-width:1500px;table-layout:fixed}
+table.data:has(thead th:nth-child(8)) th:nth-child(1){width:11%}
+table.data:has(thead th:nth-child(8)) th:nth-child(2){width:17%}
+table.data:has(thead th:nth-child(8)) th:nth-child(3){width:13%}
+table.data:has(thead th:nth-child(8)) th:nth-child(4){width:11%}
+table.data:has(thead th:nth-child(8)) th:nth-child(5){width:13%}
+table.data:has(thead th:nth-child(8)) th:nth-child(6){width:18%}
+table.data:has(thead th:nth-child(8)) th:nth-child(7){width:8%}
+table.data:has(thead th:nth-child(8)) th:nth-child(8){width:9%}
+table.data:has(thead th:nth-child(8)) th:nth-child(6),table.data:has(thead th:nth-child(8)) td:nth-child(6){overflow-wrap:anywhere;word-break:break-word}
+table.data:has(thead th:nth-child(8)) td:nth-child(6) a{word-break:break-all}
+.relation-matrix,.relation-evidence,.channel-kp-map{display:none!important}
 </style>
 </head>
 <body>
@@ -304,5 +319,9 @@ function renderRelationDetail(b){const d=companyRelationDetails[b],h=document.ge
     renderRelationshipRecords();
   })();
   </script>
+<!-- country-relation-table-cleanup -->
+<script>
+(()=>{const selector='.relation-matrix,.relation-evidence,.channel-kp-map';const prune=root=>root.querySelectorAll(selector).forEach(node=>node.remove());const start=()=>{prune(document);const target=document.getElementById('relationDetail')||document.body;new MutationObserver(()=>prune(target)).observe(target,{childList:true,subtree:true})};document.readyState==='loading'?document.addEventListener('DOMContentLoaded',start,{once:true}):start()})();
+</script>
 </body>
 </html>

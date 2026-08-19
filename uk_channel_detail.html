@@ -24,6 +24,21 @@
 .rel-yes{font-weight:800;color:var(--green)}.rel-scope{font-weight:800;color:var(--amber)}
 @media(max-width:1000px){.relation-grid{grid-template-columns:1fr 1fr}}@media(max-width:620px){.relation-grid{grid-template-columns:1fr}}
     #market,#records,#company-relations{scroll-margin-top:68px}
+
+/* country-competitor-table-widths */
+.table-box{scrollbar-gutter:stable}
+table.data:has(thead th:nth-child(8)){width:100%;min-width:1500px;table-layout:fixed}
+table.data:has(thead th:nth-child(8)) th:nth-child(1){width:11%}
+table.data:has(thead th:nth-child(8)) th:nth-child(2){width:17%}
+table.data:has(thead th:nth-child(8)) th:nth-child(3){width:13%}
+table.data:has(thead th:nth-child(8)) th:nth-child(4){width:11%}
+table.data:has(thead th:nth-child(8)) th:nth-child(5){width:13%}
+table.data:has(thead th:nth-child(8)) th:nth-child(6){width:18%}
+table.data:has(thead th:nth-child(8)) th:nth-child(7){width:8%}
+table.data:has(thead th:nth-child(8)) th:nth-child(8){width:9%}
+table.data:has(thead th:nth-child(8)) th:nth-child(6),table.data:has(thead th:nth-child(8)) td:nth-child(6){overflow-wrap:anywhere;word-break:break-word}
+table.data:has(thead th:nth-child(8)) td:nth-child(6) a{word-break:break-all}
+.relation-matrix,.relation-evidence,.channel-kp-map{display:none!important}
 </style>
 </head>
 <body>
@@ -160,6 +175,10 @@ function renderRelationDetail(brand){
  document.getElementById('brandDirectory')?.addEventListener('click',()=>requestAnimationFrame(()=>{sync();if(filter.value)section.scrollIntoView({behavior:'smooth',block:'start'});}));
  document.getElementById('resetFilters')?.addEventListener('click',()=>requestAnimationFrame(sync));sync();
 })();
+</script>
+<!-- country-relation-table-cleanup -->
+<script>
+(()=>{const selector='.relation-matrix,.relation-evidence,.channel-kp-map';const prune=root=>root.querySelectorAll(selector).forEach(node=>node.remove());const start=()=>{prune(document);const target=document.getElementById('relationDetail')||document.body;new MutationObserver(()=>prune(target)).observe(target,{childList:true,subtree:true})};document.readyState==='loading'?document.addEventListener('DOMContentLoaded',start,{once:true}):start()})();
 </script>
 </body>
 </html>

@@ -10,7 +10,22 @@
     .table-box{cursor:grab;touch-action:none}.table-box.is-dragging,.table-box.is-dragging *{cursor:grabbing!important;user-select:none}.table-box a{cursor:pointer}
   
 .relation-hidden{display:none!important}.relation-shell{border:1px solid var(--line);background:#fff;border-radius:8px;padding:16px}.relation-grid{display:grid;grid-template-columns:.85fr 1.15fr 2fr;gap:12px;align-items:start}.relation-node{border:1px solid var(--line);border-radius:7px;background:#fbfdff;padding:10px 11px;margin-bottom:8px}.brand-node{border-left:4px solid var(--blue)}.product-node{border-left:4px solid #557aa8}.channel-node{border-left:4px solid var(--green)}.relation-node b{display:block;margin-bottom:3px}.relation-node span,.relation-node small{display:block;color:var(--muted);font-size:11px;white-space:pre-line}.channel-kps{margin-top:9px;padding-top:8px;border-top:1px dashed var(--line)}.channel-kp{margin-top:6px;padding:7px 8px;background:#fffaf0;border:1px solid #f0dfb9;border-radius:6px}.relation-matrix{margin-top:16px}.relation-matrix h3{font-size:14px;margin:0 0 8px}.relation-matrix table{width:100%;border-collapse:collapse;min-width:900px}.relation-matrix th,.relation-matrix td{border:1px solid var(--line);padding:8px;font-size:11px;vertical-align:top}.relation-matrix th{background:#eef4fa;color:#385570}.rel-yes{font-weight:800;color:var(--green)}.rel-scope{font-weight:800;color:var(--amber)}.country-note{margin-top:12px;padding:9px 11px;background:#eef7ff;border-left:3px solid var(--blue);font-size:12px}@media(max-width:1000px){.relation-grid{grid-template-columns:1fr 1fr}}@media(max-width:620px){.relation-grid{grid-template-columns:1fr}}
-#market,#records,#company-relations{scroll-margin-top:68px}</style>
+#market,#records,#company-relations{scroll-margin-top:68px}
+/* country-competitor-table-widths */
+.table-box{scrollbar-gutter:stable}
+table.data:has(thead th:nth-child(8)){width:100%;min-width:1500px;table-layout:fixed}
+table.data:has(thead th:nth-child(8)) th:nth-child(1){width:11%}
+table.data:has(thead th:nth-child(8)) th:nth-child(2){width:17%}
+table.data:has(thead th:nth-child(8)) th:nth-child(3){width:13%}
+table.data:has(thead th:nth-child(8)) th:nth-child(4){width:11%}
+table.data:has(thead th:nth-child(8)) th:nth-child(5){width:13%}
+table.data:has(thead th:nth-child(8)) th:nth-child(6){width:18%}
+table.data:has(thead th:nth-child(8)) th:nth-child(7){width:8%}
+table.data:has(thead th:nth-child(8)) th:nth-child(8){width:9%}
+table.data:has(thead th:nth-child(8)) th:nth-child(6),table.data:has(thead th:nth-child(8)) td:nth-child(6){overflow-wrap:anywhere;word-break:break-word}
+table.data:has(thead th:nth-child(8)) td:nth-child(6) a{word-break:break-all}
+.relation-matrix,.relation-evidence,.channel-kp-map{display:none!important}
+</style>
 </head>
 <body>
   <header class="top"><div class="top-inner"><div class="brand">MRDVS 迈尔微视<small>NETHERLANDS CHANNEL RELATION MAP</small></div><nav><a href="index.html">欧洲总览</a><a href="#market">市场概览</a><a href="#records">关系记录</a></nav></div></header>
@@ -139,5 +154,9 @@ function relEsc(v){return String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':
 function relLink(u,l){return u?`<a href="${relEsc(u)}" target="_blank" rel="noreferrer">${l}</a>`:''}
 function renderRelationDetail(b){const d=companyRelationDetails[b],h=document.getElementById('relationDetail');if(!d||!h)return;const ks=id=>d.kps.filter(k=>k.scopeId===id);h.innerHTML=`<div class="relation-shell"><div class="relation-grid"><div><h3>01 竞品</h3><div class="relation-node brand-node"><b>${relEsc(d.brand)}</b></div></div><div><h3>02 产品 / 系列</h3>${d.products.map(p=>`<div class="relation-node product-node"><b>${relEsc(p.name)}</b>${p.url?relLink(p.url,'产品/关系证据'):''}</div>`).join('')}</div><div><h3>03 荷兰销售渠道 / 城市入口 → 对应 KP</h3>${d.channels.map(c=>`<div class="relation-node channel-node"><b>${relEsc(c.name)}</b><span>${relEsc(c.type)}</span><small>${c.cityType==='digital'?'线上 / 跨境入口':'实体城市 / 本地存在'}：${relEsc(c.city)}</small><small>${relEsc(c.note)}</small>${c.url?relLink(c.url,'渠道证据'):''}<div class="channel-kps">${ks(c.id).map(k=>`<div class="channel-kp"><b>${relEsc(k.name)}</b><span>${relEsc(k.role)}</span><small>${relEsc(k.scope)}</small></div>`).join('')||'<div class="sub">源表未提供可挂接的 KP。</div>'}</div></div>`).join('')}</div></div><div class="relation-matrix"><h3>产品 × 渠道关系矩阵</h3><div class="table-box"><table><thead><tr><th>产品 / 系列</th>${d.channels.map(c=>`<th>${relEsc(c.name)}<br><span class="sub">${relEsc(c.city)}</span></th>`).join('')}</tr></thead><tbody>${d.products.map(p=>`<tr><th>${relEsc(p.name)}</th>${d.channels.map(c=>{const e=d.edges.find(x=>x.product===p.id&&x.channel===c.id);return e?`<td><span class="${e.status==='verified'||e.status==='direct'?'rel-yes':'rel-scope'}">${e.status==='verified'||e.status==='direct'?'✓ 已核验':'△ 待核验'}</span><div>${relEsc(e.note)}</div></td>`:'<td>—</td>'}).join('')}</tr>`).join('')}</tbody></table></div></div></div>`;}
 (function(){const f=document.getElementById('brandFilter'),s=document.getElementById('company-relations');function sync(){if(!f.value||!companyRelationDetails[f.value]){s.classList.add('relation-hidden');document.getElementById('relationDetail').innerHTML='';return;}s.classList.remove('relation-hidden');renderRelationDetail(f.value);}f.addEventListener('change',()=>{sync();if(f.value)requestAnimationFrame(()=>s.scrollIntoView({behavior:'smooth',block:'start'}));});document.getElementById('brandDirectory')?.addEventListener('click',()=>requestAnimationFrame(()=>{sync();if(f.value)s.scrollIntoView({behavior:'smooth',block:'start'});}));document.getElementById('resetFilters')?.addEventListener('click',()=>requestAnimationFrame(sync));sync();})();</script>
+<!-- country-relation-table-cleanup -->
+<script>
+(()=>{const selector='.relation-matrix,.relation-evidence,.channel-kp-map';const prune=root=>root.querySelectorAll(selector).forEach(node=>node.remove());const start=()=>{prune(document);const target=document.getElementById('relationDetail')||document.body;new MutationObserver(()=>prune(target)).observe(target,{childList:true,subtree:true})};document.readyState==='loading'?document.addEventListener('DOMContentLoaded',start,{once:true}):start()})();
+</script>
 </body>
 </html>

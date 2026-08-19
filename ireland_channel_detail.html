@@ -15,7 +15,22 @@
 .relation-matrix table{width:100%;border-collapse:collapse;min-width:900px}.relation-matrix th,.relation-matrix td{border:1px solid var(--line);padding:8px;font-size:11px;vertical-align:top}.relation-matrix th{background:#eef4fa;color:#385570}
 .customer-rel-note{margin-top:10px;padding:9px 11px;background:#eef7ff;border-left:3px solid var(--blue);font-size:12px;color:#3f5873}
 @media(max-width:1000px){.relation-grid{grid-template-columns:1fr 1fr}}@media(max-width:680px){.relation-grid{grid-template-columns:1fr}}
-#market,#records,#company-relations{scroll-margin-top:68px}</style></head><body>
+#market,#records,#company-relations{scroll-margin-top:68px}
+/* country-competitor-table-widths */
+.table-box{scrollbar-gutter:stable}
+table.data:has(thead th:nth-child(8)){width:100%;min-width:1500px;table-layout:fixed}
+table.data:has(thead th:nth-child(8)) th:nth-child(1){width:11%}
+table.data:has(thead th:nth-child(8)) th:nth-child(2){width:17%}
+table.data:has(thead th:nth-child(8)) th:nth-child(3){width:13%}
+table.data:has(thead th:nth-child(8)) th:nth-child(4){width:11%}
+table.data:has(thead th:nth-child(8)) th:nth-child(5){width:13%}
+table.data:has(thead th:nth-child(8)) th:nth-child(6){width:18%}
+table.data:has(thead th:nth-child(8)) th:nth-child(7){width:8%}
+table.data:has(thead th:nth-child(8)) th:nth-child(8){width:9%}
+table.data:has(thead th:nth-child(8)) th:nth-child(6),table.data:has(thead th:nth-child(8)) td:nth-child(6){overflow-wrap:anywhere;word-break:break-word}
+table.data:has(thead th:nth-child(8)) td:nth-child(6) a{word-break:break-all}
+.relation-matrix,.relation-evidence,.channel-kp-map{display:none!important}
+</style></head><body>
 <header class="top"><div class="top-inner"><div class="brand">MRDVS 迈尔微视<small>IRELAND CHANNEL RELATION MAP</small></div><nav><a href="index.html">欧洲总览</a><a href="#market">市场概览</a><a href="#records">关系记录</a></nav></div></header>
 <main class="wrap"><div class="breadcrumb">本地预览 / 爱尔兰 / 竞品—渠道—客户—优先级</div>
 <section class="hero"><div class="eyebrow">Ireland · source workbook verified 2026-08-11</div><h1>爱尔兰：竞品、销售渠道与目标客户关系</h1><p>按德国关系页的结构，把爱尔兰工作簿中的竞品公司、产品技术、渠道节点、覆盖区域、KP职责和终端客户集中在一个可筛选页面中，便于判断从谁切入、进入哪个垂直场景以及哪些信息仍需外联核验。</p></section>
@@ -63,4 +78,8 @@ function renderRelationDetail(brand){
  document.getElementById('directory')?.addEventListener('click',()=>requestAnimationFrame(()=>{sync();if(filter.value)section.scrollIntoView({behavior:'smooth',block:'start'});}));
  document.getElementById('resetFilters')?.addEventListener('click',()=>requestAnimationFrame(sync));sync();
 })();
-</script></body></html>
+</script><!-- country-relation-table-cleanup -->
+<script>
+(()=>{const selector='.relation-matrix,.relation-evidence,.channel-kp-map';const prune=root=>root.querySelectorAll(selector).forEach(node=>node.remove());const start=()=>{prune(document);const target=document.getElementById('relationDetail')||document.body;new MutationObserver(()=>prune(target)).observe(target,{childList:true,subtree:true})};document.readyState==='loading'?document.addEventListener('DOMContentLoaded',start,{once:true}):start()})();
+</script>
+</body></html>
