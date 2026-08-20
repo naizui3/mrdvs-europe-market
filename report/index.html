@@ -33,7 +33,7 @@
     .process{position:relative;display:grid;gap:10px;margin-top:34px}.process:before{content:"";position:absolute;top:29px;right:3%;left:3%;height:3px;background:var(--navy)}.process-step{position:relative;z-index:1;text-align:center}.process-step b{display:grid;place-items:center;width:58px;height:58px;margin:0 auto 11px;color:#fff;background:var(--teal);border-radius:50%}.process-step:nth-child(n+4) b{background:var(--navy2)}.process-step p{min-height:155px;margin:0;padding:12px 8px;font-size:clamp(9px,.82vw,13px);background:var(--soft)}
     .decision-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:24px}.decision-item{min-height:155px;padding:20px;color:#fff;background:rgb(255 255 255 / 9%);border-top:5px solid var(--cyan)}.decision-item b{display:block;margin-bottom:9px;color:var(--cyan);font-size:12px}.decision-item strong{display:block;font-size:clamp(13px,1.16vw,18px);line-height:1.35}
     .statusbar{position:fixed;z-index:100;inset:auto 0 0;display:grid;grid-template-columns:118px 1fr 86px 118px;align-items:center;gap:8px;height:44px;padding:0 16px;color:#677681;background:#f7f9fa;border-top:1px solid #d9e2e7}.statusbar button{min-height:32px;color:#42515c;background:transparent;border:0;border-radius:7px;cursor:pointer}.statusbar button:hover{background:#e8eef2}.statusbar button:disabled{opacity:.32;cursor:default}.statusbar button.next{color:#fff;font-weight:750;background:var(--blue)}.statusbar button.next:hover{background:#005b90}.progress{height:4px;overflow:hidden;background:#d9e2e7;border-radius:999px;cursor:pointer}.progress span{display:block;width:5%;height:100%;background:linear-gradient(90deg,var(--blue),var(--cyan));transition:width .22s ease}.counter{text-align:right;font-variant-numeric:tabular-nums}
-    .overview .stage{overflow:auto;display:block;padding:30px}.overview .deck{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:24px;width:auto;max-width:1800px;height:auto;margin:auto;aspect-ratio:auto;box-shadow:none;background:transparent}.overview .slide{position:relative;display:block;width:100%;aspect-ratio:16/9;cursor:pointer;box-shadow:0 12px 35px rgb(24 45 58 / 14%)}.overview .statusbar{display:none}
+    .slide-canvas{position:relative;width:100%;height:100%}.overview .stage{overflow:auto;display:block;padding:30px}.overview .deck{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(310px,100%),1fr));gap:24px;width:100%;max-width:1800px;height:auto;margin:auto;aspect-ratio:auto;box-shadow:none;background:transparent}.overview .slide{position:relative;display:block;width:100%;aspect-ratio:16/9;cursor:pointer;box-shadow:0 12px 35px rgb(24 45 58 / 14%)}.overview .slide-canvas{position:absolute;top:0;left:0;width:var(--overview-base-width,1280px);height:var(--overview-base-height,720px);transform:scale(var(--overview-scale,.25));transform-origin:top left}.overview .slide[data-title="封面"]:before{width:calc(12px * var(--overview-scale,.25))}.overview .slide[data-title="产品渠道匹配"]:after,.overview .slide[data-title="德国样板"]:after{border-left-width:calc(9px * var(--overview-scale,.25))}.overview .statusbar{display:none}
     /* Capgemini-template inspired editorial system: stronger hierarchy, flatter evidence blocks, image-led chapter moments. */
     :root{--navy:#242635;--navy2:#143d4c;--blue:#0070ad;--cyan:#00abe8;--teal:#008f84;--ink:#171a20;--muted:#5f6d78;--line:#d8e1e6;--soft:#f2f5f6;--shadow:0 28px 76px rgb(12 31 46 / 22%)}
     .toolbar{background:rgb(31 33 47 / 96%)}.brand strong{font-family:"Aptos Display","HarmonyOS Sans SC","Microsoft YaHei",sans-serif;font-weight:700;letter-spacing:.025em}.tool-button{border-radius:3px}
@@ -100,6 +100,13 @@
 
   <script>
     const slides=[...document.querySelectorAll('.slide')];
+    const deck=document.getElementById('deck');
+    slides.forEach(slide=>{
+      const canvas=document.createElement('div');
+      canvas.className='slide-canvas';
+      while(slide.firstChild)canvas.append(slide.firstChild);
+      slide.append(canvas);
+    });
     const progressFill=document.getElementById('progressFill');
     const currentNumber=document.getElementById('currentNumber');
     const totalNumber=document.getElementById('totalNumber');
@@ -118,14 +125,30 @@
       document.title=`${String(index+1).padStart(2,'0')}｜${slides[index].dataset.title}｜MRDVS欧洲项目`;
       if(updateHash)history.replaceState(null,'',`#${index+1}`);
     }
-    function toggleOverview(force){const enabled=typeof force==='boolean'?force:!document.body.classList.contains('overview');document.body.classList.toggle('overview',enabled);overviewButton.textContent=enabled?'返回演示':'缩略图'}
+    function updateOverviewScale(){
+      if(!document.body.classList.contains('overview'))return;
+      slides.forEach(slide=>slide.style.setProperty('--overview-scale',slide.clientWidth/Number.parseFloat(slide.style.getPropertyValue('--overview-base-width'))));
+    }
+    function toggleOverview(force){
+      const enabled=typeof force==='boolean'?force:!document.body.classList.contains('overview');
+      if(enabled){
+        const {width,height}=deck.getBoundingClientRect();
+        slides.forEach(slide=>{
+          slide.style.setProperty('--overview-base-width',`${width}px`);
+          slide.style.setProperty('--overview-base-height',`${height}px`);
+        });
+      }
+      document.body.classList.toggle('overview',enabled);
+      overviewButton.textContent=enabled?'返回演示':'缩略图';
+      if(enabled)requestAnimationFrame(updateOverviewScale);
+    }
     prevButton.addEventListener('click',()=>show(index-1));nextButton.addEventListener('click',()=>show(index+1));
     progressFill.parentElement.addEventListener('click',event=>{const ratio=event.offsetX/event.currentTarget.clientWidth;show(Math.min(slides.length-1,Math.floor(ratio*slides.length)))});
     overviewButton.addEventListener('click',()=>toggleOverview());document.getElementById('printButton').addEventListener('click',()=>window.print());
     document.getElementById('fullButton').addEventListener('click',async()=>{if(!document.fullscreenElement)await document.documentElement.requestFullscreen();else await document.exitFullscreen()});
     slides.forEach((slide,slideIndex)=>slide.addEventListener('click',()=>{if(document.body.classList.contains('overview')){toggleOverview(false);show(slideIndex)}}));
     addEventListener('keydown',event=>{if(document.body.classList.contains('overview')&&event.key==='Escape'){toggleOverview(false);return}if(['ArrowRight','PageDown',' '].includes(event.key)){event.preventDefault();show(index+1)}if(['ArrowLeft','PageUp'].includes(event.key)){event.preventDefault();show(index-1)}if(event.key==='Home')show(0);if(event.key==='End')show(slides.length-1);if(event.key.toLowerCase()==='o')toggleOverview();if(event.key.toLowerCase()==='f')document.getElementById('fullButton').click()});
-    addEventListener('hashchange',()=>show(Number(location.hash.slice(1))-1||0,false));addEventListener('touchstart',event=>{touchStartX=event.changedTouches[0].clientX},{passive:true});addEventListener('touchend',event=>{const delta=event.changedTouches[0].clientX-touchStartX;if(Math.abs(delta)>55)show(index+(delta<0?1:-1))},{passive:true});
+    addEventListener('hashchange',()=>show(Number(location.hash.slice(1))-1||0,false));addEventListener('resize',()=>requestAnimationFrame(updateOverviewScale));addEventListener('touchstart',event=>{touchStartX=event.changedTouches[0].clientX},{passive:true});addEventListener('touchend',event=>{const delta=event.changedTouches[0].clientX-touchStartX;if(Math.abs(delta)>55)show(index+(delta<0?1:-1))},{passive:true});
     show(index,false);
   </script>
 </body>
