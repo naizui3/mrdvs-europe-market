@@ -44,7 +44,17 @@
     .slide[data-title="产品渠道匹配"]:after,.slide[data-title="德国样板"]:after{content:"";position:absolute;z-index:1;top:0;right:0;width:31%;height:27%;background-position:center;background-size:cover;border-left:9px solid var(--cyan);box-shadow:inset 90px 0 80px -72px rgb(255 255 255 / 90%)}.slide[data-title="产品渠道匹配"]:after{background-image:linear-gradient(90deg,rgb(255 255 255 / 5%),rgb(0 112 173 / 10%)),url("assets/smart-interface.jpg")}.slide[data-title="德国样板"]:after{background-image:linear-gradient(90deg,rgb(255 255 255 / 4%),rgb(0 112 173 / 8%)),url("assets/industrial-engineer.jpg")}.slide[data-title="产品渠道匹配"] h2,.slide[data-title="德国样板"] h2{max-width:66%}
     .slide[data-title="管理层决策"]{background:linear-gradient(90deg,rgba(36,38,53,.99) 0%,rgba(20,61,76,.96) 56%,rgba(0,112,173,.42) 100%),url("assets/robotics-engineer.jpg") right center/cover no-repeat}.slide[data-title="管理层决策"] .decision-item{background:rgb(17 25 37 / 64%);backdrop-filter:blur(2px)}.slide[data-title="管理层决策"] .lead{max-width:1020px;color:#e5f4f8}
     @media(max-width:760px){body{overflow:hidden}.toolbar{padding:0 10px}.brand span,.tool-button.secondary{display:none}.tool-button{padding:0 10px}.stage{display:block;overflow-y:auto;overflow-x:hidden;padding:0;background:#fff}.deck{width:100%;min-height:100%;overflow-x:hidden;aspect-ratio:auto;box-shadow:none}.slide{position:relative;min-height:calc(100vh - 106px);overflow-y:auto;overflow-x:hidden}.slide[data-title="证据密度"],.slide[data-title="产品渠道匹配"],.slide[data-title="多对多竞争"],.slide[data-title="国家渠道组合"],.slide[data-title="荷兰关系证据"],.slide[data-title="90天行动"]{overflow-x:auto}.slide-inner{height:auto;min-height:calc(100vh - 106px);padding:28px 18px 70px}.slide h1{font-size:34px}.slide h2{font-size:25px;letter-spacing:-.02em}.slide h3{font-size:17px}.slide p,.slide li{font-size:14px;line-height:1.45}.grid-3,.wave-grid,.brand-groups,.action-lanes,.evidence-grid{grid-template-columns:1fr}.grid-4,.relationship-flow{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-3,.grid-4,.relationship-flow,.wave-grid,.brand-groups,.action-lanes,.evidence-grid{gap:10px}.card,.flow-node,.wave-card,.brand-group,.action-lane,.evidence-card{padding:14px}.flow-node,.wave-card{min-height:0}.flow-node:not(:last-child):after{display:none}.metric-row{grid-template-columns:1fr;margin-top:18px}.metric strong{font-size:34px}.compact-table{min-width:760px}.process{min-width:760px}.decision-strip{grid-template-columns:1fr}.decision-item{min-height:0}.source{display:none}.statusbar{grid-template-columns:90px 1fr 66px 90px;padding:0 7px}.slide[data-title="封面"]{background:linear-gradient(180deg,rgba(20,61,76,.68) 0%,rgba(29,31,45,.94) 68%,rgba(29,31,45,.99) 100%),url("assets/future-architecture.jpg") 58% center/cover no-repeat}.slide[data-title="封面"] .slide-inner{max-width:none;justify-content:flex-end;padding-bottom:82px}.slide[data-title="产品渠道匹配"]:after,.slide[data-title="德国样板"]:after{display:none}.slide[data-title="产品渠道匹配"] h2,.slide[data-title="德国样板"] h2{max-width:none}.slide[data-title="管理层决策"]{background-position:64% center}}
-    @media print{@page{size:13.333in 7.5in;margin:0}body{overflow:visible;background:#fff}.toolbar,.statusbar{display:none!important}.stage{position:static;display:block;padding:0}.deck{width:13.333in;height:auto;box-shadow:none}.slide{position:relative;display:block!important;width:13.333in;height:7.5in;break-after:page}}
+    @media print{
+      @page{size:13.333in 7.5in;margin:0}
+      html,body{width:13.333in!important;min-width:0!important;height:auto!important;margin:0!important;overflow:visible!important;background:#fff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+      *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+      .toolbar,.statusbar{display:none!important}
+      .stage,.overview .stage{position:static!important;inset:auto!important;display:block!important;width:13.333in!important;height:auto!important;min-height:0!important;margin:0!important;padding:0!important;overflow:visible!important;background:#fff!important}
+      .deck,.overview .deck{position:static!important;display:block!important;width:13.333in!important;max-width:none!important;height:auto!important;min-height:0!important;margin:0!important;overflow:visible!important;aspect-ratio:auto!important;box-shadow:none!important;background:#fff!important}
+      .slide,.slide.active,.overview .slide{position:relative!important;inset:auto!important;display:block!important;width:13.333in!important;min-width:13.333in!important;max-width:13.333in!important;height:7.5in!important;min-height:7.5in!important;margin:0!important;overflow:hidden!important;break-after:page!important;page-break-after:always!important;opacity:1!important;transform:none!important;animation:none!important;box-shadow:none!important}
+      .slide:last-child{break-after:auto!important;page-break-after:auto!important}
+      .slide-inner{height:100%!important;min-height:0!important}
+    }
   </style>
 </head>
 <body>
@@ -52,6 +62,7 @@
     <a class="brand" href="../index.html" aria-label="返回欧洲市场与渠道地图"><i class="brand-mark" aria-hidden="true"></i><span><strong>MRDVS 欧洲阶段性交付</strong><span>市场 · 竞品 · 产品 · 渠道 · 地址 · KP</span></span></a>
     <nav class="toolbar-actions" aria-label="演示工具">
       <button class="tool-button secondary" id="overviewButton" type="button">缩略图</button>
+      <a class="tool-button secondary" id="downloadButton" href="MRDVS_欧洲市场与渠道总项目汇报_2026-08.pptx" download>下载PPT</a>
       <button class="tool-button secondary" id="printButton" type="button">打印 / PDF</button>
       <button class="tool-button secondary" id="fullButton" type="button">全屏</button>
       <a class="tool-button primary" href="../index.html">返回数据主页</a>
@@ -111,10 +122,12 @@
     const currentNumber=document.getElementById('currentNumber');
     const totalNumber=document.getElementById('totalNumber');
     const overviewButton=document.getElementById('overviewButton');
+    const printButton=document.getElementById('printButton');
     const prevButton=document.getElementById('prevButton');
     const nextButton=document.getElementById('nextButton');
     let index=Math.max(0,Math.min(slides.length-1,Number(location.hash.slice(1))-1||0));
     let touchStartX=0;
+    let printState=null;
     totalNumber.textContent=String(slides.length).padStart(2,'0');
     function show(nextIndex,updateHash=true){
       index=Math.max(0,Math.min(slides.length-1,nextIndex));
@@ -142,9 +155,26 @@
       overviewButton.textContent=enabled?'返回演示':'缩略图';
       if(enabled)requestAnimationFrame(updateOverviewScale);
     }
+    function prepareForPrint(){
+      if(printState)return;
+      printState={overview:document.body.classList.contains('overview'),title:document.title};
+      document.body.classList.remove('overview');
+      overviewButton.textContent='缩略图';
+      document.documentElement.classList.add('printing');
+      document.title='迈尔微视欧洲市场进入与渠道客户策略_网页汇报_2026-08';
+    }
+    function restoreAfterPrint(){
+      if(!printState)return;
+      const previous=printState;
+      printState=null;
+      document.documentElement.classList.remove('printing');
+      if(previous.overview)toggleOverview(true);
+      document.title=previous.title;
+    }
     prevButton.addEventListener('click',()=>show(index-1));nextButton.addEventListener('click',()=>show(index+1));
     progressFill.parentElement.addEventListener('click',event=>{const ratio=event.offsetX/event.currentTarget.clientWidth;show(Math.min(slides.length-1,Math.floor(ratio*slides.length)))});
-    overviewButton.addEventListener('click',()=>toggleOverview());document.getElementById('printButton').addEventListener('click',()=>window.print());
+    overviewButton.addEventListener('click',()=>toggleOverview());printButton.addEventListener('click',()=>{prepareForPrint();window.print()});
+    addEventListener('beforeprint',prepareForPrint);addEventListener('afterprint',restoreAfterPrint);
     document.getElementById('fullButton').addEventListener('click',async()=>{if(!document.fullscreenElement)await document.documentElement.requestFullscreen();else await document.exitFullscreen()});
     slides.forEach((slide,slideIndex)=>slide.addEventListener('click',()=>{if(document.body.classList.contains('overview')){toggleOverview(false);show(slideIndex)}}));
     addEventListener('keydown',event=>{if(document.body.classList.contains('overview')&&event.key==='Escape'){toggleOverview(false);return}if(['ArrowRight','PageDown',' '].includes(event.key)){event.preventDefault();show(index+1)}if(['ArrowLeft','PageUp'].includes(event.key)){event.preventDefault();show(index-1)}if(event.key==='Home')show(0);if(event.key==='End')show(slides.length-1);if(event.key.toLowerCase()==='o')toggleOverview();if(event.key.toLowerCase()==='f')document.getElementById('fullButton').click()});
